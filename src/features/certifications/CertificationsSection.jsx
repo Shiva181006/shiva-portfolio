@@ -39,7 +39,7 @@ const certs = [
     link: "https://drive.google.com/file/d/16uqjeRfoJtNQMaIfQ8bhBWuUPEzJuBw9/preview",
   },
   {
-    title: "Programming Fundamentals using Python",
+    title: "Programming Fundamentals in Python",
     issuer: "Infosys Springboard",
     grade: "Completed",
     link: "https://drive.google.com/file/d/1y9AatkwzaG6S79xe7yA1PvwwWeNBK1MG/preview",
@@ -58,47 +58,52 @@ const certs = [
   },
 ];
 
-export function Certifications() {
+export function CertificationsSection() {
   return (
     <section className="relative py-20 px-6">
       <div className="max-w-7xl mx-auto">
+        
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="max-w-2xl mb-12"
         >
           <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-4">
             <Award className="w-3.5 h-3.5" /> Certifications
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Stamps of <span className="text-gradient">consistent learning</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Credentials & <span className="text-gradient font-sans font-bold">consistent learning</span>
           </h2>
         </motion.div>
 
+        {/* Certs Grid list */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {certs.map((c, i) => (
             <motion.a
               key={c.title}
               href={c.link}
               target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="rounded-xl border border-border bg-card/60 backdrop-blur p-5 flex items-start gap-3 hover:border-primary/40 transition-all"
+              className="rounded-xl border border-border bg-card/60 backdrop-blur p-4 flex items-start gap-3 hover:border-primary/40 transition-all font-sans"
             >
               <BadgeCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold text-sm">{c.title}</div>
-                <div className="text-xs text-muted-foreground mt-0.5">
+                <div className="font-bold text-xs text-foreground leading-snug">{c.title}</div>
+                <div className="text-[10px] text-muted-foreground mt-1 font-mono">
                   {c.issuer} • {c.grade}
                 </div>
               </div>
             </motion.a>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,41 +1,37 @@
 import { ThemeProvider } from "@/components/theme-provider.jsx";
 import { Toaster } from "sonner";
-import { Navbar } from "@/components/portfolio/Navbar.jsx";
-import { Hero } from "@/components/portfolio/Hero.jsx";
-import { TechMarquee } from "@/components/portfolio/TechMarquee.jsx";
-import { About } from "@/components/portfolio/About.jsx";
-import { Stats } from "@/components/portfolio/Stats.jsx";
-import { Skills } from "@/components/portfolio/Skills.jsx";
-import { Projects } from "@/components/portfolio/Projects.jsx";
-import { Journey } from "@/components/portfolio/Journey.jsx";
-import { Testimonials } from "@/components/portfolio/Testimonials.jsx";
-import { Certifications } from "@/components/portfolio/Certifications.jsx";
-import { Contact } from "@/components/portfolio/Contact.jsx";
-import { Footer } from "@/components/portfolio/Footer.jsx";
-import { Cursor } from "@/components/portfolio/Cursor.jsx";
-import { ScrollProgress } from "@/components/portfolio/ScrollProgress.jsx";
-import { BackToTop } from "@/components/portfolio/BackToTop.jsx";
-import { Loader } from "@/components/portfolio/Loader.jsx";
+import { Loader } from "./features/layout/Loader.jsx";
+import { ScrollProgress } from "./features/layout/ScrollProgress.jsx";
+import { Navbar } from "./features/layout/Navbar.jsx";
+import { Hero } from "./features/hero/Hero.jsx";
+import { TechMarquee } from "./features/layout/TechMarquee.jsx";
+import { AboutSection } from "./features/about/AboutSection.jsx";
+import { SkillsSection } from "./features/skills/SkillsSection.jsx";
+import { ProjectsSection } from "./features/projects/ProjectsSection.jsx";
+import { JourneySection } from "./features/journey/JourneySection.jsx";
+import { TestimonialsSection } from "./features/testimonials/TestimonialsSection.jsx";
+import { CertificationsSection } from "./features/certifications/CertificationsSection.jsx";
+import { ContactSection } from "./features/contact/ContactSection.jsx";
+import { Footer } from "./features/layout/Footer.jsx";
+import { BackToTop } from "./features/layout/BackToTop.jsx";
 
 export default function App() {
   return (
     <ThemeProvider>
       <Loader />
       <ScrollProgress />
-      <Cursor />
-      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
         <Navbar />
         <main>
           <Hero />
           <TechMarquee />
-          <About />
-          <Stats />
-          <Skills />
-          <Projects />
-          <Journey />
-          <Testimonials />
-          <Certifications />
-          <Contact />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <JourneySection />
+          <TestimonialsSection />
+          <CertificationsSection />
+          <ContactSection />
         </main>
         <Footer />
         <BackToTop />
