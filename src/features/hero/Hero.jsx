@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles, Code2, Terminal, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button.jsx";
 
 const roles = [
@@ -18,12 +18,12 @@ function Typewriter() {
 
   useEffect(() => {
     const current = roles[i % roles.length];
-    const speed = del ? 50 : 100;
+    const speed = del ? 45 : 90;
     const t = setTimeout(() => {
       if (!del) {
         setText(current.slice(0, text.length + 1));
         if (text.length + 1 === current.length) {
-          setTimeout(() => setDel(true), 1500);
+          setTimeout(() => setDel(true), 1600);
         }
       } else {
         setText(current.slice(0, text.length - 1));
@@ -37,7 +37,7 @@ function Typewriter() {
   }, [text, del, i]);
 
   return (
-    <span className="text-gradient">
+    <span className="text-primary font-semibold">
       {text}
       <span className="inline-block w-[2px] h-[0.8em] bg-primary ml-1 animate-pulse align-middle" />
     </span>
@@ -48,185 +48,206 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden layout-grid"
+      className="relative min-h-[90vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden studio-grid"
     >
       <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
-      
-      {/* Background glow meshes */}
-      <motion.div
-        aria-hidden
-        animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 -left-40 w-[400px] h-[400px] rounded-full bg-gradient-glow blur-3xl pointer-events-none"
-      />
-      <motion.div
-        aria-hidden
-        animate={{ scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 -right-32 w-[350px] h-[350px] rounded-full bg-gradient-glow blur-3xl pointer-events-none"
-      />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10 items-center w-full">
-        <div className="lg:col-span-7 space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs text-muted-foreground"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            Open to Internships & Junior Developer Roles
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground"
-          >
-            Hi, I'm <span className="text-gradient font-sans">Shiva Kasaudhan</span>
-            <br />
-            <span className="text-foreground/90 text-3xl sm:text-4xl lg:text-5xl font-semibold">I build with intent ➜ </span> 
-            <br />
-            <span className="text-3xl sm:text-4xl lg:text-5xl"><Typewriter /></span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base text-muted-foreground max-w-xl leading-relaxed font-sans"
-          >
-            MCA student crafting real-world web applications with{" "}
-            <span className="text-foreground font-medium">React, Node.js, Express & Java</span>.
-            I focus on secure routing, binary document compilation, and integrating robust LLM pipelines.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap gap-3"
-          >
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-glow border-0 rounded-full"
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Column: Personal Narrative */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+            
+            {/* Live Status Pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card/80 backdrop-blur-md px-3.5 py-1.5 text-xs text-muted-foreground shadow-sm"
             >
-              <a href="#projects">
-                Explore Projects <ArrowRight className="ml-1 w-4 h-4" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full border-border bg-card/40 backdrop-blur hover:bg-accent"
-            >
-              <a href="https://drive.google.com/file/d/1VZQrrhFqv1eo_pYZmuJv_TzGL6RmMbaV/view?preview" target="_blank">
-                <Download className="mr-1.5 w-4 h-4" /> Resume
-              </a>
-            </Button>
-          </motion.div>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="font-medium text-foreground flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-primary" /> Kanpur, UP
+              </span>
+              <span className="text-muted-foreground/60">•</span>
+              <span>Available for Roles & Internships</span>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center gap-4 pt-2"
-          >
-            <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-bold">Connect</span>
-            <div className="h-px w-8 bg-border" />
-            <div className="flex gap-2">
-              {[
-                { icon: Github, href: "https://github.com/Shiva181006", label: "GitHub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/shiva-kasaudhan-153858241/", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:shivakasaudhan817@gmail.com", label: "Email" }
-              ].map(({ icon: Icon, href, label }) => (
+            {/* Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="space-y-3"
+            >
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-foreground">
+                Hi, I'm <span className="text-gradient font-serif italic font-bold">Shiva Kasaudhan</span>
+              </h1>
+              <p className="text-lg sm:text-2xl font-medium text-foreground/90">
+                Crafting human-centric digital tools ➜ <Typewriter />
+              </p>
+            </motion.div>
+
+            {/* Sub-description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed"
+            >
+              MCA candidate at PSIT Kanpur building full-stack web products with{" "}
+              <strong className="text-foreground font-semibold">React, Node.js, Express & Java</strong>. 
+              I focus on clean API architecture, intuitive user interfaces, and smart Gemini AI workflows.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-3.5 pt-1"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-primary text-primary-foreground hover:opacity-95 shadow-glow border-0 rounded-full text-xs sm:text-sm font-semibold px-6"
+              >
+                <a href="#projects" className="flex items-center gap-2">
+                  View Selected Work <ArrowRight className="w-4 h-4" />
+                </a>
+              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-full border-border bg-card/60 backdrop-blur hover:bg-accent text-xs sm:text-sm font-medium px-5"
+              >
                 <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
+                  href="https://drive.google.com/file/d/1VZQrrhFqv1eo_pYZmuJv_TzGL6RmMbaV/view?preview"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 grid place-items-center rounded-full border border-border bg-card/40 backdrop-blur text-muted-foreground hover:text-foreground hover:border-primary/50 hover:shadow-glow transition-all"
+                  className="flex items-center gap-1.5"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Download className="w-4 h-4 text-primary" /> Download Resume
                 </a>
-              ))}
+              </Button>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex items-center gap-3 pt-3"
+            >
+              <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-bold">Connect</span>
+              <div className="h-px w-8 bg-border" />
+              <div className="flex gap-2">
+                {[
+                  { icon: Github, href: "https://github.com/Shiva181006", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/shiva-kasaudhan-153858241/", label: "LinkedIn" },
+                  { icon: Mail, href: "mailto:shivakasaudhan817@gmail.com", label: "Email" }
+                ].map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 grid place-items-center rounded-full border border-border bg-card/60 text-muted-foreground hover:text-foreground hover:border-primary/60 hover:shadow-glow transition-all"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Right Column: Handcrafted Human Developer Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none"
+          >
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-primary opacity-20 blur-xl rounded-3xl" />
+              
+              <div className="relative rounded-2xl border border-border bg-card/90 backdrop-blur-xl p-6 shadow-elegant space-y-5">
+                
+                {/* Header Profile Badge */}
+                <div className="flex items-center justify-between pb-4 border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-primary grid place-items-center text-primary-foreground font-extrabold text-base shadow-glow">
+                      SK
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base text-foreground leading-tight">Shiva Kasaudhan</h3>
+                      <p className="text-xs text-muted-foreground font-mono">MCA @ PSIT Kanpur • 8.2 CGPA</p>
+                    </div>
+                  </div>
+                  <span className="p-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary">
+                    <UserCheck className="w-4 h-4" />
+                  </span>
+                </div>
+
+                {/* Craftsmanship Highlights */}
+                <div className="space-y-3 text-xs">
+                  <div className="p-3 rounded-xl bg-background/60 border border-border/80 space-y-1">
+                    <div className="flex items-center justify-between font-mono text-[11px] text-primary font-bold">
+                      <span className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5" /> Primary Stack</span>
+                      <span>MERN + Java</span>
+                    </div>
+                    <p className="text-muted-foreground text-[11px] leading-relaxed">
+                      React.js, Node.js, Express, MongoDB, Core Java Algorithms & Gemini LLM APIs.
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-background/60 border border-border/80 space-y-1">
+                    <div className="flex items-center justify-between font-mono text-[11px] text-primary font-bold">
+                      <span className="flex items-center gap-1.5"><Terminal className="w-3.5 h-3.5" /> Flagship Build</span>
+                      <span>HireLens AI</span>
+                    </div>
+                    <p className="text-muted-foreground text-[11px] leading-relaxed">
+                      AI Resume & ATS Evaluator with automated JWT auth, Puppeteer PDF exports & Gemini model fallbacks.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Personal Motto Quote */}
+                <div className="p-3.5 rounded-xl bg-gradient-primary/10 border border-primary/20 text-xs">
+                  <p className="text-foreground/90 font-serif italic leading-relaxed text-sm">
+                    "I believe in clean architecture, intentional UI design, and code that solves genuine human problems."
+                  </p>
+                </div>
+
+                {/* Quick stats pills */}
+                <div className="grid grid-cols-3 gap-2 text-center pt-1 font-mono">
+                  <div className="p-2 rounded-lg bg-background/40 border border-border/60">
+                    <div className="text-sm font-bold text-primary">15+</div>
+                    <div className="text-[9px] text-muted-foreground uppercase">Projects</div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/40 border border-border/60">
+                    <div className="text-sm font-bold text-primary">800+</div>
+                    <div className="text-[9px] text-muted-foreground uppercase">Commits</div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/40 border border-border/60">
+                    <div className="text-sm font-bold text-primary">5</div>
+                    <div className="text-[9px] text-muted-foreground uppercase">Certs</div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </motion.div>
+
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="lg:col-span-5"
-        >
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-2xl rounded-3xl" />
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative rounded-2xl border border-border bg-card/85 backdrop-blur-xl shadow-elegant overflow-hidden"
-            >
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-secondary/40 select-none">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <span className="w-3 h-3 rounded-full bg-green-500/80" />
-                <span className="ml-3 text-xs text-muted-foreground font-mono">shiva.js</span>
-              </div>
-              <pre className="p-5 text-xs sm:text-sm font-mono leading-relaxed text-foreground/90 overflow-x-auto select-text selection:bg-primary/20">
-                {`const developer = {
-  name: "Shiva Kasaudhan",
-  education: "MCA @ PSIT, Kanpur",
-  gpa: 8.2,
-  coreStack: ["React.js", "Node.js", "Express", "MongoDB"],
-  integrations: ["Google Gemini API", "Puppeteer Exporter"],
-  superpower: () => "build dynamic, secure AI tools"
-};
-
-developer.superpower();`}
-              </pre>
-              <div className="px-5 pb-5 flex items-center gap-2 text-xs text-muted-foreground font-mono">
-                <Sparkles className="w-3.5 h-3.5 text-primary" />
-                <span>Always learning. Always shipping.</span>
-              </div>
-            </motion.div>
-
-            {/* Floating badges */}
-            <motion.div
-              animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 px-3 py-1.5 rounded-full bg-card border border-primary/20 text-xs font-mono font-bold shadow-glow text-foreground"
-            >
-              ⚡ React
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 8, 0], rotate: [0, -3, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-4 -left-4 px-3 py-1.5 rounded-full bg-card border border-primary/20 text-xs font-mono font-bold shadow-glow text-foreground"
-            >
-              🤖 Gemini API
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#about"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-muted-foreground font-mono flex flex-col items-center gap-1 hover:text-foreground transition-colors select-none"
-      >
-        <span>scroll</span>
-        <span className="w-px h-6 bg-gradient-to-b from-primary to-transparent" />
-      </motion.a>
     </section>
   );
 }

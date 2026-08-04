@@ -1,153 +1,203 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Github, FolderGit2, Sparkle } from "lucide-react";
+import { ArrowUpRight, Github, FolderGit2, Sparkle, Layers, CheckCircle2, Bot, AlertTriangle, Code } from "lucide-react";
 
-function HireLensDashboard() {
+function HireLensInteractiveWidget() {
+  const [activeTab, setActiveTab] = useState("ats"); // ats | gaps | qa
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div className="rounded-2xl border border-border/60 bg-background/50 p-5 font-sans space-y-4 shadow-elegant text-foreground">
-      <div className="flex items-center justify-between border-b border-border/20 pb-3">
-        <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-wider">AI Evaluation Portal</span>
-        <span className="text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">Active</span>
+    <div className="rounded-2xl border border-border bg-background/80 p-4 sm:p-5 font-sans space-y-4 shadow-sm w-full text-foreground overflow-hidden">
+      
+      {/* Top Header */}
+      <div className="flex items-center justify-between border-b border-border pb-3">
+        <span className="text-xs font-mono text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <Bot className="w-3.5 h-3.5 text-primary" /> HireLens AI Core Engine
+        </span>
+        <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-mono font-semibold">
+          Active Sandbox
+        </span>
       </div>
 
-      {/* ATS & Gap Analysis */}
-      <div className="grid grid-cols-2 gap-3">
-        {/* ATS Progress Ring */}
-        <div className="flex flex-col items-center justify-center p-3 bg-card/65 rounded-xl border border-border/30">
-          <div className="relative w-16 h-16 flex items-center justify-center">
-            {/* SVG circle */}
-            <svg className="absolute w-full h-full -rotate-90">
-              <circle cx="32" cy="32" r="26" className="stroke-muted/20 fill-none" strokeWidth="5" />
-              <motion.circle
-                cx="32"
-                cy="32"
-                r="26"
-                className="stroke-primary fill-none"
-                strokeWidth="5"
-                strokeDasharray={2 * Math.PI * 26}
-                initial={{ strokeDashoffset: 2 * Math.PI * 26 }}
-                whileInView={{ strokeDashoffset: 2 * Math.PI * 26 * (1 - 0.87) }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-              />
-            </svg>
-            <span className="text-sm font-bold font-mono text-foreground">87%</span>
-          </div>
-          <span className="text-[10px] text-muted-foreground mt-2 font-mono">ATS Match</span>
-        </div>
-
-        {/* Skill Gap Check */}
-        <div className="p-3 bg-card/65 rounded-xl border border-border/30 flex flex-col justify-between">
-          <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-wider">Skill Gaps</span>
-          <div className="space-y-1 mt-1">
-            <div className="flex items-center justify-between text-[10px]">
-              <span className="text-muted-foreground">System Design</span>
-              <span className="px-1.5 py-0.1 rounded bg-amber-500/10 text-amber-400 font-mono text-[8px] border border-amber-500/20">Mid</span>
-            </div>
-            <div className="flex items-center justify-between text-[10px]">
-              <span className="text-muted-foreground">Node.js API</span>
-              <span className="px-1.5 py-0.1 rounded bg-emerald-500/10 text-emerald-400 font-mono text-[8px] border border-emerald-500/20">Pass</span>
-            </div>
-            <div className="flex items-center justify-between text-[10px]">
-              <span className="text-muted-foreground">Docker</span>
-              <span className="px-1.5 py-0.1 rounded bg-rose-500/10 text-rose-400 font-mono text-[8px] border border-rose-500/20">High</span>
-            </div>
-          </div>
-        </div>
+      {/* Tab Switcher */}
+      <div className="flex bg-card p-1 rounded-xl border border-border gap-1 font-mono text-[11px]">
+        <button
+          onClick={() => setActiveTab("ats")}
+          className={`flex-1 py-1.5 rounded-lg font-medium transition-all ${
+            activeTab === "ats" ? "bg-primary text-primary-foreground font-bold shadow-sm" : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          ATS Analyzer
+        </button>
+        <button
+          onClick={() => setActiveTab("gaps")}
+          className={`flex-1 py-1.5 rounded-lg font-medium transition-all ${
+            activeTab === "gaps" ? "bg-primary text-primary-foreground font-bold shadow-sm" : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          Skill Gap Check
+        </button>
+        <button
+          onClick={() => setActiveTab("qa")}
+          className={`flex-1 py-1.5 rounded-lg font-medium transition-all ${
+            activeTab === "qa" ? "bg-primary text-primary-foreground font-bold shadow-sm" : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          AI Prep QA
+        </button>
       </div>
 
-      {/* Mock Interview Question Widget */}
-      <div className="bg-card/45 p-3.5 rounded-xl border border-border/30 space-y-2.5">
-        <div className="flex items-center gap-1.5">
-          <span className="px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 text-[8px] font-mono uppercase tracking-wider">AI Question</span>
-          <span className="text-[9px] text-muted-foreground font-mono">Systems • Fallbacks</span>
-        </div>
-        <p className="text-xs text-foreground/95 font-medium leading-relaxed">
-          "How do you handle API fallback logic when the primary Gemini model hits rate limits?"
-        </p>
-
-        {/* Answer Button */}
-        <div className="pt-0.5">
-          <button
-            onClick={() => setShowAnswer(!showAnswer)}
-            className="w-full text-left text-[10px] text-primary hover:text-primary-glow font-mono font-medium flex items-center justify-between transition-colors bg-secondary/50 hover:bg-secondary/80 px-2.5 py-1.5 rounded-lg border border-border/20"
+      {/* Tab Contents */}
+      <div className="min-h-[140px] flex flex-col justify-center">
+        {activeTab === "ats" && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-2 gap-3"
           >
-            <span>{showAnswer ? "Hide AI Solution" : "Reveal AI Solution"}</span>
-            <span className="text-[8px]">{showAnswer ? "▲" : "▼"}</span>
-          </button>
+            <div className="flex flex-col items-center justify-center p-3 bg-card rounded-xl border border-border text-center">
+              <div className="relative w-14 h-14 flex items-center justify-center">
+                <svg className="absolute w-full h-full -rotate-90">
+                  <circle cx="28" cy="28" r="22" className="stroke-muted/30 fill-none" strokeWidth="4" />
+                  <circle
+                    cx="28"
+                    cy="28"
+                    r="22"
+                    className="stroke-primary fill-none"
+                    strokeWidth="4"
+                    strokeDasharray={2 * Math.PI * 22}
+                    strokeDashoffset={2 * Math.PI * 22 * (1 - 0.88)}
+                  />
+                </svg>
+                <span className="text-sm font-bold font-mono text-foreground">88%</span>
+              </div>
+              <span className="text-[10px] text-muted-foreground mt-1.5 font-mono">Role Match Score</span>
+            </div>
 
-          <AnimatePresence>
+            <div className="p-3 bg-card rounded-xl border border-border flex flex-col justify-between text-xs space-y-1.5">
+              <div className="text-[10px] font-mono text-muted-foreground uppercase font-bold">Key Keywords</div>
+              <div className="flex items-center justify-between text-[11px]">
+                <span className="text-foreground font-medium">Node.js / Express</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+              </div>
+              <div className="flex items-center justify-between text-[11px]">
+                <span className="text-foreground font-medium">JWT Security</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+              </div>
+              <div className="flex items-center justify-between text-[11px]">
+                <span className="text-foreground font-medium">Puppeteer Export</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {activeTab === "gaps" && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-2 text-xs"
+          >
+            <div className="p-2.5 bg-card rounded-xl border border-border flex items-center justify-between">
+              <span className="text-foreground font-medium">System Scalability & Caching</span>
+              <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 text-[10px] font-mono font-bold border border-amber-500/20">Recommended</span>
+            </div>
+            <div className="p-2.5 bg-card rounded-xl border border-border flex items-center justify-between">
+              <span className="text-foreground font-medium">REST API Auth Pipeline</span>
+              <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 text-[10px] font-mono font-bold border border-emerald-500/20">Proficient</span>
+            </div>
+          </motion.div>
+        )}
+
+        {activeTab === "qa" && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-2"
+          >
+            <div className="text-xs font-medium text-foreground bg-card p-2.5 rounded-xl border border-border">
+              "How do you resolve Google Gemini API rate limits (429 status code)?"
+            </div>
+            <button
+              onClick={() => setShowAnswer(!showAnswer)}
+              className="w-full text-left text-[11px] text-primary font-mono font-semibold px-3 py-1.5 bg-primary/10 rounded-lg border border-primary/20 flex items-center justify-between hover:bg-primary/20 transition-colors"
+            >
+              <span>{showAnswer ? "Hide Solution" : "Reveal Solution"}</span>
+              <span>{showAnswer ? "▲" : "▼"}</span>
+            </button>
             {showAnswer && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                className="overflow-hidden"
-              >
-                <div className="mt-2 text-[9px] text-muted-foreground leading-relaxed bg-background/50 p-2.5 rounded-lg border border-border/10 font-mono max-h-[85px] overflow-y-auto">
-                  <strong>Gemini Fallback:</strong> If primary model triggers a 429 status code, automatically shift queries to backup models <code className="bg-secondary px-1 py-0.2 rounded font-mono text-foreground">['gemini-2.5-pro', 'gemini-2.0-flash']</code>, preventing user downtime.
-                </div>
-              </motion.div>
+              <div className="text-[10px] text-muted-foreground font-mono bg-card p-2.5 rounded-xl border border-border leading-relaxed">
+                <strong>Model Fallback:</strong> Automatic retry decorator catches 429 status codes and seamlessly redirects prompts to backup LLM models without breaking user experience.
+              </div>
             )}
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        )}
       </div>
+
     </div>
   );
 }
 
+const categories = ["All", "AI & MERN", "Core Java & Algorithms", "Web Apps"];
+
 const projects = [
   {
     title: "HireLens AI",
-    tag: "Flagship AI Platform",
-    status: "Live",
+    category: "AI & MERN",
+    tag: "Flagship AI Career Platform",
+    status: "Live & Deployed",
     isFeatured: true,
     problem:
-      "Job candidates struggle to tailor their resumes and prep for specific role requirements, resulting in low ATS matching scores and high interview anxiety.",
+      "Job seekers struggle to customize their resumes for specific job descriptions, suffering low ATS scores and interview anxiety.",
     solution:
-      "A MERN stack platform featuring cookie-based JWT protection, PDF resume parsing, custom study roadmaps, and mock interviews using fallback Google Gemini API models.",
+      "A full-stack MERN web application with cookie-based JWT authentication, automated ATS score evaluation, custom roadmap generators, and mock interview preps powered by Gemini AI API.",
     impact:
-      "Supports dynamic, job-tailored resume generation down to PDF via headless Puppeteer, and automates JWT cookie management for dev/prod environments.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Puppeteer", "Sass", "JWT"],
-    accent: "from-amber-500 via-yellow-600 to-amber-500",
+      "Generates downloadable PDF resumes via headless Puppeteer and safely handles model rate limit fallbacks.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Puppeteer", "Sass", "JWT Auth"],
     github: "https://github.com/Shiva181006/HireLens-AI",
     demo: "https://github.com/Shiva181006/HireLens-AI",
   },
   {
     title: "Smart Dine",
-    tag: "Restaurant Web App",
-    status: "In Progress",
+    category: "Web Apps",
+    tag: "Restaurant Pre-Ordering App",
+    status: "Completed",
+    isFeatured: false,
     problem:
-      "Restaurants need a simple way to let guests browse menus, pre-order food, and reserve tables in real-time.",
+      "Diners experience long wait times when viewing menus and placing orders during peak hours.",
     solution:
-      "A full-featured React app with reusable components and centralized state — cutting code duplication by ~40%.",
-    impact: "Speeds up ordering & reduces wait times for diners.",
+      "A sleek React.js application with dynamic food menus, interactive table reservation flows, and centralized state management — reducing code repetition by ~40%.",
+    impact: "Streamlines pre-ordering and minimizes dining delay.",
     tech: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
-    accent: "from-amber-600 to-yellow-500",
     github: "https://github.com/Shiva181006",
-    demo: "#",
+    demo: "https://github.com/Shiva181006",
   },
   {
-    title: "Spam Detection System",
-    tag: "Core Java • OOP",
+    title: "Spam Detection Engine",
+    category: "Core Java & Algorithms",
+    tag: "Core Java • OOP Architecture",
     status: "Completed",
+    isFeatured: false,
     problem:
-      "Spam clogs inboxes — and most learners think detection requires heavy ML libraries.",
+      "Most spam filtering demos rely heavily on external machine learning libraries without building core algorithmic understanding.",
     solution:
-      "A modular Core Java console app using keyword filtering & string processing — zero external libraries.",
-    impact: "Demonstrates clean OOP design and algorithmic thinking.",
-    tech: ["Java", "OOP", "String Processing", "Algorithms"],
-    accent: "from-yellow-500 to-amber-600",
+      "A modular Core Java application utilizing object-oriented principles, string pattern matching, and keyword scoring algorithms — using zero external dependencies.",
+    impact: "Demonstrates fundamental OOP design and clean memory management.",
+    tech: ["Java", "OOP Principles", "String Algorithms", "Data Structures"],
     github: "https://github.com/Shiva181006",
-    demo: "#",
+    demo: "https://github.com/Shiva181006",
   },
 ];
 
 export function ProjectsSection() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects = projects.filter(
+    (p) => activeCategory === "All" || p.category === activeCategory
+  );
+
   return (
-    <section id="projects" className="relative py-28 px-6">
+    <section id="projects" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -156,128 +206,139 @@ export function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mb-16"
+          className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            <FolderGit2 className="w-3.5 h-3.5" /> Projects
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+            <FolderGit2 className="w-3.5 h-3.5" /> Selected Portfolio Projects
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Things I've <span className="text-gradient font-sans font-bold">built & shipped</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            Crafted with <span className="text-gradient">purpose & precision</span>
           </h2>
-          <p className="mt-4 text-muted-foreground font-sans text-sm">
-            Each project is a problem I cared about — not a copy-paste template.
+          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Real applications built to solve genuine technical and user challenges.
           </p>
         </motion.div>
 
-        {/* Projects Cards List */}
-        <div className="space-y-8">
-          {projects.map((p, i) => (
-            <motion.article
-              key={p.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group relative rounded-3xl border border-border bg-card/50 backdrop-blur overflow-hidden hover:border-primary/40 transition-all font-sans"
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-border pb-4 font-mono text-xs">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-full font-medium transition-all ${
+                activeCategory === cat
+                  ? "bg-primary text-primary-foreground font-bold shadow-sm"
+                  : "bg-card hover:bg-accent text-muted-foreground hover:text-foreground border border-border"
+              }`}
             >
-              <div
-                className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${p.accent} opacity-60`}
-              />
-              <div className="grid lg:grid-cols-12 gap-8 p-8 items-center">
-                
-                {/* Left side: Visual representation / Custom dashboard */}
-                <div className="lg:col-span-5 relative">
-                  {p.isFeatured ? (
-                    <HireLensDashboard />
-                  ) : (
-                    <div
-                      className={`aspect-square rounded-2xl bg-gradient-to-br ${p.accent} p-1 shadow-glow`}
-                    >
-                      <div className="w-full h-full rounded-2xl bg-card grid place-items-center relative overflow-hidden">
-                        <div className="absolute inset-0 layout-grid opacity-20" />
-                        <div className="relative text-7xl font-bold text-gradient font-mono">
-                          0{i + 1}
-                        </div>
-                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                          <span className="text-xs font-mono text-muted-foreground">
-                            {p.tag}
-                          </span>
-                          <span className="text-xs px-2.5 py-0.5 rounded-full border border-primary/40 bg-primary/10 text-primary font-mono font-bold">
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="space-y-8">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((p, i) => (
+              <motion.article
+                key={p.title}
+                layout
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+                className="craft-card p-6 sm:p-8"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                  
+                  {/* Left Column: Interactive Widget or Visual Card */}
+                  <div className="lg:col-span-5 w-full">
+                    {p.isFeatured ? (
+                      <HireLensInteractiveWidget />
+                    ) : (
+                      <div className="rounded-2xl border border-border bg-background/80 p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-mono text-muted-foreground">{p.tag}</span>
+                          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                             {p.status}
                           </span>
                         </div>
+                        <div className="my-auto text-center">
+                          <div className="text-5xl font-mono font-extrabold text-primary/30 mb-2">0{i + 1}</div>
+                          <h4 className="text-xl font-bold text-foreground">{p.title}</h4>
+                        </div>
+                        <div className="text-[11px] font-mono text-muted-foreground">
+                          {p.category}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right Column: Details & Impact */}
+                  <div className="lg:col-span-7 space-y-5">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <span className="text-xs font-mono text-primary font-semibold">{p.tag}</span>
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-1 tracking-tight">
+                          {p.title}
+                        </h3>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <a
+                          href={p.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub Repository"
+                          className="w-9 h-9 grid place-items-center rounded-full border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          <Github className="w-4 h-4" />
+                        </a>
+                        <a
+                          href={p.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Live Demo"
+                          className="w-9 h-9 grid place-items-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 transition-opacity"
+                        >
+                          <ArrowUpRight className="w-4 h-4" />
+                        </a>
                       </div>
                     </div>
-                  )}
+
+                    {/* Problem / Solution / Impact Triad */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-sans">
+                      <div className="p-3 rounded-xl bg-background/50 border border-border/70 space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-primary">Problem</div>
+                        <p className="text-muted-foreground leading-relaxed text-[11px]">{p.problem}</p>
+                      </div>
+                      <div className="p-3 rounded-xl bg-background/50 border border-border/70 space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-primary">Solution</div>
+                        <p className="text-muted-foreground leading-relaxed text-[11px]">{p.solution}</p>
+                      </div>
+                      <div className="p-3 rounded-xl bg-background/50 border border-border/70 space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-primary">Impact</div>
+                        <p className="text-muted-foreground leading-relaxed text-[11px]">{p.impact}</p>
+                      </div>
+                    </div>
+
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {p.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-border bg-background/80 text-muted-foreground"
+                        >
+                          <Sparkle className="w-2.5 h-2.5 text-primary" /> {t}
+                        </span>
+                      ))}
+                    </div>
+
+                  </div>
+
                 </div>
-
-                {/* Right side: Project Details */}
-                <div className="lg:col-span-7 space-y-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <span className="text-xs font-mono text-muted-foreground">
-                        {p.tag}
-                      </span>
-                      <h3 className="text-2xl font-bold tracking-tight text-foreground mt-1">
-                        {p.title}
-                      </h3>
-                    </div>
-                    <div className="flex gap-2 shrink-0">
-                      <a
-                        href={p.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                        className="w-9 h-9 grid place-items-center rounded-full border border-border bg-card hover:bg-accent hover:border-primary/50 transition-all text-muted-foreground hover:text-foreground"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={p.demo}
-                        aria-label="Live demo"
-                        className="w-9 h-9 grid place-items-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 transition-all"
-                      >
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-3 gap-4 text-xs font-sans">
-                    <div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-primary mb-1">
-                        Problem
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">{p.problem}</p>
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-primary mb-1">
-                        Solution
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">{p.solution}</p>
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-primary mb-1">
-                        Impact
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">{p.impact}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {p.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-full border border-border bg-secondary/50 text-muted-foreground"
-                      >
-                        <Sparkle className="w-2.5 h-2.5 text-primary" /> {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </div>
 
       </div>

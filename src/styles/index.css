@@ -3,76 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --radius: 1rem;
-  --background: oklch(0.98 0.005 240);
-  --foreground: oklch(0.18 0.01 240);
-  --card: oklch(0.95 0.005 240);
-  --card-foreground: oklch(0.18 0.01 240);
-  
-  /* Nordic Bronze accents */
-  --primary: oklch(0.72 0.12 85); /* #cda250 */
-  --primary-foreground: oklch(0.99 0 0);
-  --primary-glow: oklch(0.76 0.10 90);
-  
-  --secondary: oklch(0.92 0.01 240);
-  --secondary-foreground: oklch(0.18 0.01 240);
-  --muted: oklch(0.92 0.01 240);
-  --muted-foreground: oklch(0.55 0.01 240);
-  --accent: oklch(0.95 0.015 85);
-  --accent-foreground: oklch(0.18 0.01 240);
-  --border: oklch(0.88 0.01 240);
-  --input: oklch(0.9 0.01 240);
-  --ring: oklch(0.72 0.12 85);
+  --radius: 0.85rem;
+  /* Human Studio Light Palette - Organic Warm Linen & Deep Charcoal */
+  --background: oklch(0.985 0.008 75);       /* #faf7f3 Organic Warm Linen */
+  --foreground: oklch(0.19 0.02 45);         /* #241f1a Deep Espresso Charcoal */
+  --card: oklch(0.96 0.01 75);               /* #f3ede5 Handcrafted Studio Card */
+  --card-foreground: oklch(0.19 0.02 45);
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.68 0.14 80), oklch(0.78 0.10 90));
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.72 0.12 85 / 0.1), transparent 70%);
-  --gradient-glow: radial-gradient(circle at center, oklch(0.72 0.12 85 / 0.15), transparent 70%);
-  --shadow-glow: 0 0 60px -15px oklch(0.72 0.12 85 / 0.3);
-  --shadow-elegant: 0 15px 40px -15px rgba(0, 0, 0, 0.06);
+  /* Warm Terracotta Accent */
+  --primary: oklch(0.59 0.16 38);            /* #cd5729 Warm Terracotta */
+  --primary-foreground: oklch(0.99 0.005 75);
+  --primary-glow: oklch(0.65 0.14 42);
+
+  --secondary: oklch(0.93 0.015 75);
+  --secondary-foreground: oklch(0.2 0.02 45);
+  --muted: oklch(0.92 0.012 75);
+  --muted-foreground: oklch(0.48 0.02 45);
+  --accent: oklch(0.93 0.02 55);
+  --accent-foreground: oklch(0.19 0.02 45);
+  --border: oklch(0.87 0.018 70);
+  --input: oklch(0.89 0.015 70);
+  --ring: oklch(0.59 0.16 38);
+
+  --gradient-primary: linear-gradient(135deg, oklch(0.59 0.16 38), oklch(0.68 0.14 55));
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.59 0.16 38 / 0.07), transparent 70%);
+  --gradient-glow: radial-gradient(circle at center, oklch(0.59 0.16 38 / 0.09), transparent 70%);
+  --shadow-glow: 0 10px 30px -10px oklch(0.59 0.16 38 / 0.22);
+  --shadow-elegant: 0 16px 36px -12px rgba(36, 31, 26, 0.07);
 }
 
 .dark {
-  --background: oklch(0.11 0.008 240); /* #0c0d10 */
-  --foreground: oklch(0.94 0.005 240); /* #edeef0 */
-  --card: oklch(0.15 0.012 240);      /* #15171d */
-  --card-foreground: oklch(0.94 0.005 240);
-  
-  /* Nordic Bronze accents */
-  --primary: oklch(0.74 0.13 85); /* #cda250 */
-  --primary-foreground: oklch(0.11 0.008 240);
-  --primary-glow: oklch(0.78 0.11 90);
-  
-  --secondary: oklch(0.18 0.015 240);
-  --secondary-foreground: oklch(0.94 0.005 240);
-  --muted: oklch(0.18 0.015 240);
-  --muted-foreground: oklch(0.65 0.01 240);
-  --accent: oklch(0.2 0.02 85);
-  --accent-foreground: oklch(0.94 0.005 240);
-  --border: oklch(1 0 0 / 6%);
-  --input: oklch(1 0 0 / 8%);
-  --ring: oklch(0.74 0.13 85);
+  /* Nordic Studio Midnight Slate & Warm Champagne Gold / Raw Brass */
+  --background: oklch(0.14 0.02 260);        /* #0b1120 Deep Oceanic Midnight Slate */
+  --foreground: oklch(0.94 0.008 90);       /* #f3f3f0 Soft Silk Parchment */
+  --card: oklch(0.18 0.025 260);            /* #131c31 Nordic Slate Studio Card */
+  --card-foreground: oklch(0.94 0.008 90);
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.72 0.13 85), oklch(0.8 0.09 90));
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.74 0.13 85 / 0.15), transparent 70%);
-  --gradient-glow: radial-gradient(circle at center, oklch(0.78 0.11 90 / 0.2), transparent 70%);
-  --shadow-glow: 0 0 80px -10px oklch(0.74 0.13 85 / 0.35);
-  --shadow-elegant: 0 25px 50px -20px rgba(0, 0, 0, 0.4);
+  /* Handcrafted Champagne Gold / Raw Brass Accent (Non-AI, ultra-luxurious human tone) */
+  --primary: oklch(0.76 0.14 82);           /* #dfb15b Champagne Gold / Raw Brass */
+  --primary-foreground: oklch(0.12 0.02 260);
+  --primary-glow: oklch(0.82 0.12 85);
+
+  --secondary: oklch(0.22 0.025 260);
+  --secondary-foreground: oklch(0.94 0.008 90);
+  --muted: oklch(0.22 0.025 260);
+  --muted-foreground: oklch(0.66 0.015 260);
+  --accent: oklch(0.24 0.03 260);
+  --accent-foreground: oklch(0.94 0.008 90);
+  --border: oklch(0.32 0.03 260 / 0.55);     /* Hairline Slate Border */
+  --input: oklch(0.32 0.03 260 / 0.6);
+  --ring: oklch(0.76 0.14 82);
+
+  --gradient-primary: linear-gradient(135deg, oklch(0.76 0.14 82), oklch(0.85 0.11 90));
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.76 0.14 82 / 0.08), transparent 70%);
+  --gradient-glow: radial-gradient(circle at center, oklch(0.76 0.14 82 / 0.1), transparent 70%);
+  --shadow-glow: 0 10px 35px -10px oklch(0.76 0.14 82 / 0.22);
+  --shadow-elegant: 0 20px 45px -15px rgba(0, 0, 0, 0.45);
 }
 
 @layer base {
-  * { border-color: var(--border); }
+  * {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    width: 100%;
   }
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
-  }
-  html {
-    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -89,12 +100,21 @@
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   
-  /* Minimal micro-grid layout lines */
-  .layout-grid {
-    background-image:
-      linear-gradient(to right, oklch(1 0 0 / 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(1 0 0 / 0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
+  /* Subtle organic paper dot grid */
+  .studio-grid {
+    background-image: radial-gradient(oklch(0.55 0.04 260 / 0.1) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .craft-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .craft-card:hover {
+    border-color: oklch(0.76 0.14 82 / 0.4);
+    box-shadow: var(--shadow-elegant);
   }
 }
 
@@ -104,13 +124,15 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gradient-primary);
-  border-radius: 10px;
-  border: 3px solid var(--background);
+  background: oklch(0.55 0.05 260 / 0.4);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }

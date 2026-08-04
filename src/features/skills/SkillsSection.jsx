@@ -1,78 +1,70 @@
 import { motion } from "framer-motion";
-import { Code, Database, Layout, Wrench, Server, Brain, Braces } from "lucide-react";
+import { Code, Database, Layout, Wrench, Server, Brain, Braces, Check } from "lucide-react";
 
 const groups = [
   {
     icon: Braces,
-    title: "Languages",
-    color: "from-amber-500 to-amber-600",
+    title: "Core Languages",
     items: [
-      { name: "Java (Core)", note: "OOP principles, collections, DSA" },
-      { name: "JavaScript", note: "ES6+, async/await, DOM callbacks" },
-      { name: "SQL", note: "Relational queries, index optimizations" },
-      { name: "C / C++", note: "NPTEL Elite, pointers, data structs" },
+      { name: "Java (Core)", note: "OOP principles, collection framework & algorithms", level: "Advanced" },
+      { name: "JavaScript", note: "ES6+, async/await promises, DOM & event loop", level: "Proficient" },
+      { name: "SQL", note: "Relational queries, index optimization & joins", level: "Proficient" },
+      { name: "C / C++", note: "NPTEL Elite certified, pointers & data structures", level: "Core" },
     ],
   },
   {
     icon: Layout,
-    title: "Frontend Development",
-    color: "from-yellow-600 to-amber-500",
+    title: "Frontend Engineering",
     items: [
-      { name: "React.js", note: "Vite build tools, context hooks, router" },
-      { name: "Tailwind CSS", note: "Responsive grids, flex containers" },
-      { name: "Sass / SCSS", note: "Nested rulesets, modular layout styling" },
-      { name: "HTML5 & CSS3", note: "Semantic layout markup & transitions" },
+      { name: "React.js", note: "Context hooks, custom state management & Vite", level: "Advanced" },
+      { name: "Tailwind CSS", note: "Responsive layouts, flex containers & CSS variables", level: "Advanced" },
+      { name: "Sass / SCSS", note: "Modular mixins, nesting rulesets & styling architecture", level: "Proficient" },
+      { name: "HTML5 & CSS3", note: "Semantic layout structure, accessibility & transitions", level: "Advanced" },
     ],
   },
   {
     icon: Server,
     title: "Backend & Secure APIs",
-    color: "from-amber-600 to-yellow-500",
     items: [
-      { name: "Node.js", note: "Runtime execution & NPM dependencies" },
-      { name: "Express.js", note: "REST API structures & router routing" },
-      { name: "JWT Auth", note: "HTTP-only cookie protection, token keys" },
-      { name: "Multer streams", note: "Handling file uploads & file parsing" },
+      { name: "Node.js", note: "Asynchronous runtime execution & NPM modules", level: "Proficient" },
+      { name: "Express.js", note: "RESTful API routes, middleware & error handling", level: "Proficient" },
+      { name: "JWT Auth", note: "HTTP-only secure cookie tokens & role protection", level: "Advanced" },
+      { name: "Multer", note: "Streamed multipart file uploads & validation", level: "Proficient" },
     ],
   },
   {
     icon: Database,
     title: "Databases & Storage",
-    color: "from-yellow-500 to-amber-600",
     items: [
-      { name: "MongoDB & Mongoose", note: "NoSQL collections, validation checks" },
-      { name: "MySQL / PostgreSQL", note: "Relations, indexing, joins, normalization" },
-      { name: "ACID transactions", note: "Data consistency & transaction safety" },
+      { name: "MongoDB & Mongoose", note: "Document collections, schema validation & indexing", level: "Proficient" },
+      { name: "MySQL / PostgreSQL", note: "Relational tables, foreign keys & normalization", level: "Proficient" },
+      { name: "ACID Compliance", note: "Transaction integrity & data consistency", level: "Core" },
     ],
   },
   {
     icon: Brain,
-    title: "AI Integration",
-    color: "from-amber-500 to-yellow-600",
+    title: "AI Integration & Workflows",
     items: [
-      { name: "Google Gemini API", note: "Prompt engineering, structured JSON returns" },
-      { name: "Puppeteer Exporter", note: "Headless HTML-to-PDF rendering" },
-      { name: "Model Fallbacks", note: "Catching 429 exceptions, model routing" },
+      { name: "Google Gemini API", note: "Prompt engineering & structured JSON returns", level: "Proficient" },
+      { name: "Puppeteer Exporter", note: "Headless HTML rendering to PDF documents", level: "Proficient" },
+      { name: "Model Fallbacks", note: "429 rate limit exceptions & dynamic model switching", level: "Advanced" },
     ],
   },
   {
     icon: Wrench,
     title: "Tools & Workflows",
-    color: "from-yellow-600 to-amber-500",
     items: [
-      { name: "Git & GitHub", note: "Branching, pull requests, version control" },
-      { name: "Postman", note: "API endpoint verification & checking" },
-      { name: "VS Code", note: "Daily shell logs, debug routines" },
+      { name: "Git & GitHub", note: "Branch management, pull requests & version control", level: "Advanced" },
+      { name: "Postman", note: "API testing, payload verification & environment vars", level: "Proficient" },
+      { name: "VS Code", note: "Integrated terminal, debugging & extension setups", level: "Advanced" },
     ],
   },
 ];
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-28 px-6">
-      <div className="absolute inset-0 layout-grid opacity-30 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-      
-      <div className="relative max-w-7xl mx-auto">
+    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <motion.div
@@ -80,44 +72,56 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mb-16"
+          className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            <Code className="w-3.5 h-3.5" /> Skills
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+            <Code className="w-3.5 h-3.5" /> Technical Skills & Tools
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Tools I use to <span className="text-gradient font-sans font-bold">build & ship</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            Tools I use to <span className="text-gradient">build & ship</span>
           </h2>
-          <p className="mt-4 text-muted-foreground font-sans text-sm">
-            Not just a list — here is how I actually apply these tools in my projects.
+          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Practical competencies tested and applied across real project deployments.
           </p>
         </motion.div>
 
-        {/* Skills Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {groups.map((g, i) => (
             <motion.div
               key={g.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group relative rounded-2xl border border-border bg-card/60 backdrop-blur p-6 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
+              className="craft-card p-6 flex flex-col justify-between"
             >
-              <div
-                className={`w-10 h-10 rounded-xl bg-gradient-to-br ${g.color} grid place-items-center mb-4 text-primary-foreground shadow-glow`}
-              >
-                <g.icon className="w-5 h-5" />
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0">
+                    <g.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-base text-foreground">{g.title}</h3>
+                </div>
+
+                <ul className="space-y-4 font-sans">
+                  {g.items.map((item) => (
+                    <li key={item.name} className="text-xs space-y-0.5">
+                      <div className="flex items-center justify-between font-semibold text-foreground">
+                        <span className="flex items-center gap-1.5">
+                          <Check className="w-3 h-3 text-primary" /> {item.name}
+                        </span>
+                        <span className="text-[9px] font-mono px-2 py-0.2 rounded bg-background border border-border text-muted-foreground">
+                          {item.level}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground pl-4 leading-relaxed font-sans">
+                        {item.note}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="font-bold text-base mb-4 text-foreground">{g.title}</h3>
-              <ul className="space-y-3 font-sans">
-                {g.items.map((item) => (
-                  <li key={item.name} className="text-xs">
-                    <div className="font-semibold text-foreground">{item.name}</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">{item.note}</div>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>

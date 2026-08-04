@@ -14,8 +14,8 @@ export function ContactSection() {
     setSending(true);
     setTimeout(() => {
       setSending(false);
-      toast.success("Connection packaged!", {
-        description: "Opening system mail client parameters."
+      toast.success("Opening email client!", {
+        description: "Drafting message to Shiva Kasaudhan."
       });
       const form = e.currentTarget;
       const data = new FormData(form);
@@ -25,35 +25,35 @@ export function ContactSection() {
       );
       window.location.href = `mailto:shivakasaudhan817@gmail.com?subject=${subject}&body=${body}`;
       form.reset();
-    }, 600);
+    }, 500);
   };
 
   return (
-    <section id="contact" className="relative py-28 px-6 layout-grid">
-      <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
-      
-      <div className="relative max-w-6xl mx-auto">
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-14"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            <Mail className="w-3.5 h-3.5" /> Contact
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+            <Mail className="w-3.5 h-3.5" /> Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Let's <span className="text-gradient font-sans font-bold">build something</span> together
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            Let's <span className="text-gradient">connect & collaborate</span>
           </h2>
-          <p className="mt-4 text-muted-foreground font-sans text-sm">
-            Have a project, an internship, or just want to chat about AI models? My inbox is open.
+          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Interested in hiring me for software development roles, internships, or technical projects? Drop a message below.
           </p>
         </motion.div>
 
         {/* Layout split */}
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          
           {/* Info cards */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -70,19 +70,19 @@ export function ContactSection() {
                 href: "mailto:shivakasaudhan817@gmail.com",
               },
               { icon: Phone, label: "Phone", value: "+91 73984 19325", href: "tel:+917398419325" },
-              { icon: MapPin, label: "Location", value: "Kanpur, India", href: "#" },
+              { icon: MapPin, label: "Location", value: "Kanpur, Uttar Pradesh, India", href: "#" },
             ].map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-4 rounded-2xl border border-border bg-card/60 backdrop-blur p-4 hover:border-primary/40 hover:shadow-glow transition-all"
+                className="craft-card p-4.5 flex items-center gap-4 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary grid place-items-center shadow-glow shrink-0 text-primary-foreground">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0 group-hover:scale-105 transition-transform">
                   <item.icon className="w-4.5 h-4.5" />
                 </div>
-                <div>
-                  <div className="text-[10px] text-muted-foreground font-mono">{item.label}</div>
-                  <div className="font-bold text-xs mt-0.5 text-foreground">{item.value}</div>
+                <div className="overflow-hidden">
+                  <div className="text-[10px] text-muted-foreground font-mono uppercase">{item.label}</div>
+                  <div className="font-bold text-xs sm:text-sm mt-0.5 text-foreground truncate">{item.value}</div>
                 </div>
               </a>
             ))}
@@ -93,18 +93,18 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex-1 h-11 grid place-items-center rounded-xl border border-border bg-card/60 backdrop-blur hover:border-primary/40 hover:bg-accent transition-all text-muted-foreground hover:text-foreground"
+                className="flex-1 h-11 grid place-items-center rounded-xl border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
               >
-                <Github className="w-4.5 h-4.5" />
+                <span className="flex items-center gap-1.5"><Github className="w-4 h-4" /> GitHub</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/shiva-kasaudhan-153858241/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex-1 h-11 grid place-items-center rounded-xl border border-border bg-card/60 backdrop-blur hover:border-primary/40 hover:bg-accent transition-all text-muted-foreground hover:text-foreground"
+                className="flex-1 h-11 grid place-items-center rounded-xl border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
               >
-                <Linkedin className="w-4.5 h-4.5" />
+                <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> LinkedIn</span>
               </a>
             </div>
           </motion.div>
@@ -116,58 +116,61 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 rounded-3xl border border-border bg-card/60 backdrop-blur p-6 sm:p-8 space-y-4 font-sans"
+            className="lg:col-span-3 craft-card p-6 sm:p-8 space-y-4 font-sans"
           >
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-2 block">
-                  Name
+                <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1.5 block font-bold">
+                  Your Name
                 </label>
                 <Input
                   name="name"
                   required
-                  placeholder="Your Name"
-                  className="bg-background/50 border-border h-11 text-xs"
+                  placeholder="e.g. Rahul Sharma"
+                  className="bg-background border-border h-11 text-xs rounded-xl focus-visible:ring-primary"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-2 block">
-                  Email
+                <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1.5 block font-bold">
+                  Your Email
                 </label>
                 <Input
                   name="email"
                   type="email"
                   required
-                  placeholder="you@domain.com"
-                  className="bg-background/50 border-border h-11 text-xs"
+                  placeholder="you@company.com"
+                  className="bg-background border-border h-11 text-xs rounded-xl focus-visible:ring-primary"
                 />
               </div>
             </div>
+
             <div>
-              <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-2 block">
-                Message
+              <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1.5 block font-bold">
+                Your Message
               </label>
               <Textarea
                 name="message"
                 required
                 rows={4}
-                placeholder="Connection message template details..."
-                className="bg-background/50 border-border resize-none text-xs"
+                placeholder="Share your opportunity or project details..."
+                className="bg-background border-border resize-none text-xs rounded-xl focus-visible:ring-primary"
               />
             </div>
+
             <Button
               type="submit"
               disabled={sending}
               size="lg"
-              className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-glow border-0 rounded-xl"
+              className="w-full bg-gradient-primary text-primary-foreground hover:opacity-95 shadow-glow border-0 rounded-xl font-semibold text-xs py-3"
             >
               {sending ? "Sending..." : (
-                <>
-                  Send Message <Send className="ml-1 w-4 h-4" />
-                </>
+                <span className="flex items-center justify-center gap-2">
+                  Send Message <Send className="w-3.5 h-3.5" />
+                </span>
               )}
             </Button>
           </motion.form>
+
         </div>
 
       </div>

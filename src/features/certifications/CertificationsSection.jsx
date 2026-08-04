@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, BadgeCheck } from "lucide-react";
+import { Award, ExternalLink, ShieldCheck } from "lucide-react";
 
 const certs = [
   {
@@ -60,7 +60,7 @@ const certs = [
 
 export function CertificationsSection() {
   return (
-    <section className="relative py-20 px-6">
+    <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -69,18 +69,21 @@ export function CertificationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mb-12"
+          className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            <Award className="w-3.5 h-3.5" /> Certifications
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+            <Award className="w-3.5 h-3.5" /> Verified Certifications
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Credentials & <span className="text-gradient font-sans font-bold">consistent learning</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            Credentials & <span className="text-gradient">continuous learning</span>
           </h2>
+          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Industry & academic certifications verifying software and cloud skills.
+          </p>
         </motion.div>
 
-        {/* Certs Grid list */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Certs Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {certs.map((c, i) => (
             <motion.a
               key={c.title}
@@ -90,16 +93,24 @@ export function CertificationsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="rounded-xl border border-border bg-card/60 backdrop-blur p-4 flex items-start gap-3 hover:border-primary/40 transition-all font-sans"
+              transition={{ duration: 0.4, delay: i * 0.04 }}
+              className="craft-card p-4.5 flex items-start justify-between gap-3 group"
             >
-              <BadgeCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <div>
-                <div className="font-bold text-xs text-foreground leading-snug">{c.title}</div>
-                <div className="text-[10px] text-muted-foreground mt-1 font-mono">
-                  {c.issuer} • {c.grade}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0 mt-0.5">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {c.title}
+                  </h3>
+                  <div className="text-[10px] text-muted-foreground mt-1 font-mono">
+                    {c.issuer} • <span className="text-primary font-semibold">{c.grade}</span>
+                  </div>
                 </div>
               </div>
+
+              <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
             </motion.a>
           ))}
         </div>
