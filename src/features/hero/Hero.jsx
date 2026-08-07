@@ -4,9 +4,8 @@ import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles, Code2, 
 import { Button } from "@/components/ui/button.jsx";
 
 const roles = [
-  "Full-Stack AI Developer",
   "MERN Stack Engineer",
-  "React & Sass Specialist",
+  "React & Sass",
   "Java & Algorithms Coder",
   "Problem Solver"
 ];
