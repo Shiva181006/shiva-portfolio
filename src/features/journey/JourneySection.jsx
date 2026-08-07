@@ -13,7 +13,7 @@ const timeline = [
     year: "2024 - 2026",
     icon: GraduationCap,
     title: "MCA candidate at PSIT Kanpur",
-    place: "Kanpur, UP • 8.2 CGPA",
+    place: "Kanpur, UP • 8.46 CGPA",
     text: "Focused on enterprise full-stack development, database architecture, and security protocols.",
   },
   {
@@ -49,7 +49,7 @@ const timeline = [
     icon: Zap,
     title: "Available for Software Roles",
     place: "Kanpur / Remote",
-    text: "Actively seeking Full-Stack Developer or Software Engineer opportunities.",
+    text: "Actively seeking Frontend Developer or Software Engineer opportunities.",
   },
 ];
 
