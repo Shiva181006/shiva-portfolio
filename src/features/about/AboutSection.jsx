@@ -6,7 +6,7 @@ const story = [
   {
     icon: GraduationCap,
     title: "Academic Foundation (B.Sc. → MCA)",
-    text: "Graduated with B.Sc. and currently completing MCA at PSIT Kanpur (8.2 CGPA). Built a strong foundation in core computer science, database administration, and algorithms.",
+    text: "Graduated with B.Sc. Computer Science and recently graduated MCA at PSIT Kanpur (8.46 CGPA). Built a strong foundation in core computer science, database administration, and algorithms.",
   },
   {
     icon: Lightbulb,
@@ -22,9 +22,9 @@ const story = [
 
 const stats = [
   { label: "Projects Built", value: 15, suffix: "+" },
-  { label: "MCA CGPA", value: 8.2, suffix: "/10", decimals: 1 },
+  { label: "MCA CGPA", value: 8.46, suffix: "/10", decimals: 1 },
   { label: "Certifications", value: 5, suffix: "" },
-  { label: "Git Commits", value: 800, suffix: "+" },
+  { label: "Git Commits", value: 500, suffix: "+" },
 ];
 
 function Counter({ value, suffix, decimals = 0 }) {
