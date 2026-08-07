@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const techs = [
-  "React.js", "JavaScript", "Java", "Node.js", "Tailwind CSS",
+  "React.js", "JavaScript", "Node.js", "Tailwind CSS", "Bootstrap",
   "MySQL", "MongoDB", "Git", "GitHub", "Vite", "Framer Motion",
   "HTML5", "CSS3", "Sass / SCSS", "REST API", "Express.js", "Mongoose", "Puppeteer"
 ];
