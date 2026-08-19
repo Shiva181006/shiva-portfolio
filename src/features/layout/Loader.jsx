@@ -15,7 +15,7 @@ export function Loader() {
         <motion.div
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[100] bg-[#0c0d10] flex flex-col items-center justify-center font-mono select-none"
+          className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center font-mono select-none"
         >
           <div className="space-y-4 text-center">
             <motion.div
