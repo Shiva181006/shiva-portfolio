@@ -96,7 +96,7 @@ export function AboutSection() {
               <Heart className="w-3.5 h-3.5" /> About Me & Background
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              Building software with <span className="text-gradient">clarity & craft</span>
+              Building software with <span className="text-gradient whitespace-nowrap">clarity & craft</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               I'm an MCA graduate and frontend-focused developer who cares about clean code, thoughtful user experiences, and building practical web applications with React.js, JavaScript, Java, and AI APIs.

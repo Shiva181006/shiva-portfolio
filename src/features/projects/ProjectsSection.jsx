@@ -230,7 +230,7 @@ export function ProjectsSection() {
             <FolderGit2 className="w-3.5 h-3.5" /> Selected Portfolio Projects
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Crafted with <span className="text-gradient">purpose & precision</span>
+            Crafted with <span className="text-gradient whitespace-nowrap">purpose & precision</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Real applications built to solve genuine technical and user challenges.

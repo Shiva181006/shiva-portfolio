@@ -80,7 +80,7 @@ export function ContactSection() {
             <Mail className="w-3.5 h-3.5" /> Get In Touch
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Let's <span className="text-gradient">connect & collaborate</span>
+            Let's <span className="text-gradient whitespace-nowrap">connect & collaborate</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Interested in hiring me for frontend development or software developer roles? Drop a message below.

@@ -75,7 +75,7 @@ export function SkillsSection() {
             <Code className="w-3.5 h-3.5" /> Technical Skills & Tools
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Tools I use to <span className="text-gradient">build & ship</span>
+            Tools I use to <span className="text-gradient whitespace-nowrap">build & ship</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Practical competencies tested and applied across real project deployments.
