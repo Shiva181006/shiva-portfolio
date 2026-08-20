@@ -10,11 +10,6 @@ export function ContactSection() {
   const [sending, setSending] = useState(false);
   const formRef = useRef(null);
 
-  // Directly bind keys with fallbacks so background sending ALWAYS works without requiring Vite restart
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_ro3q8ok";
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_mmbk53n";
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "awwzO24eC21YWok96";
-
   const onSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
