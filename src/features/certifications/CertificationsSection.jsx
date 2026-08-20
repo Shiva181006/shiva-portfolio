@@ -38,11 +38,29 @@ const certs = [
     grade: "Elite Grade",
     link: "https://drive.google.com/file/d/1CbxQ548YxEmc05KQbA2MQUyR2cK7YfoP/preview",
   },
+  {
+    title: "Programming in Modern C++",
+    issuer: "NPTEL (IIT Kharagpur)",
+    grade: "Completed",
+    link: "https://drive.google.com/file/d/16cw53kze3oCe4AN3XpK9msoNH_ekIOtF/preview",
+  },
+  {
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "AWS Training & Certification",
+    grade: "Completed",
+    link: "https://drive.google.com/file/d/1CHJytXgRcSnNvfBTlISNXlxkUvn_fXrA/preview",
+  },
+  {
+    title: "Programming Fundamentals in Python",
+    issuer: "Infosys Springboard",
+    grade: "Completed",
+    link: "https://drive.google.com/file/d/1y9AatkwzaG6S79xe7yA1PvwwWeNBK1MG/preview",
+  },
 ];
 
 export function CertificationsSection() {
   return (
-    <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="certifications" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -60,7 +78,7 @@ export function CertificationsSection() {
             Credentials & <span className="text-gradient">continuous learning</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Industry & academic certifications verifying software and cloud skills.
+            Industry & academic certifications verifying software, programming, and cloud skills.
           </p>
         </motion.div>
 

@@ -24,7 +24,7 @@ const stats = [
   { label: "MCA CGPA", value: 8.46, suffix: "/10", decimals: 1 },
   { label: "LeetCode DSA", value: 100, suffix: "+" },
   { label: "MCA Attendance", value: 100, suffix: "%" },
-  { label: "Certifications", value: 6, suffix: "" },
+  { label: "Certifications", value: 9, suffix: "" },
 ];
 
 const achievements = [
