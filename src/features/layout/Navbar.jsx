@@ -20,6 +20,17 @@ export function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", href);
+    }
+    setOpen(false);
+  };
+
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -58,6 +69,7 @@ export function Navbar() {
         {/* Brand identity */}
         <a
           href="#home"
+          onClick={(e) => handleNavClick(e, "#home")}
           className="flex items-center gap-2.5 group font-bold text-base sm:text-lg tracking-tight"
         >
           <span className="w-8 h-8 rounded-lg bg-gradient-primary grid place-items-center text-primary-foreground font-mono text-xs font-extrabold shadow-glow group-hover:scale-105 transition-transform">
@@ -77,6 +89,7 @@ export function Navbar() {
               <li key={l.href} className="relative">
                 <a
                   href={l.href}
+                  onClick={(e) => handleNavClick(e, l.href)}
                   className={`relative px-3 py-1.5 text-xs font-medium transition-colors rounded-full ${
                     isActive
                       ? "text-primary-foreground font-semibold"
@@ -114,7 +127,7 @@ export function Navbar() {
             size="sm"
             className="hidden sm:inline-flex bg-gradient-primary text-primary-foreground hover:opacity-90 rounded-full shadow-glow border-0 text-xs font-semibold px-4"
           >
-            <a href="#contact" className="flex items-center gap-1">
+            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")} className="flex items-center gap-1">
               Hire Me <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </Button>
@@ -147,7 +160,7 @@ export function Navbar() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => handleNavClick(e, l.href)}
                     className={`block px-4 py-2.5 rounded-xl font-medium transition-colors ${
                       active === l.href.slice(1)
                         ? "bg-primary/10 text-primary font-bold border border-primary/20"
@@ -166,7 +179,7 @@ export function Navbar() {
                 size="sm"
                 className="bg-gradient-primary text-primary-foreground rounded-full text-xs font-semibold px-4"
               >
-                <a href="#contact" onClick={() => setOpen(false)}>
+                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                   Contact Me
                 </a>
               </Button>
