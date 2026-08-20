@@ -9,7 +9,6 @@ import { AboutSection } from "./features/about/AboutSection.jsx";
 import { SkillsSection } from "./features/skills/SkillsSection.jsx";
 import { ProjectsSection } from "./features/projects/ProjectsSection.jsx";
 import { JourneySection } from "./features/journey/JourneySection.jsx";
-import { TestimonialsSection } from "./features/testimonials/TestimonialsSection.jsx";
 import { CertificationsSection } from "./features/certifications/CertificationsSection.jsx";
 import { ContactSection } from "./features/contact/ContactSection.jsx";
 import { Footer } from "./features/layout/Footer.jsx";
@@ -29,7 +28,6 @@ export default function App() {
           <SkillsSection />
           <ProjectsSection />
           <JourneySection />
-          <TestimonialsSection />
           <CertificationsSection />
           <ContactSection />
         </main>

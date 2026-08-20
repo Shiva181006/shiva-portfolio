@@ -138,54 +138,72 @@ function HireLensInteractiveWidget() {
   );
 }
 
-const categories = ["All", "AI & MERN", "Core Java & Algorithms", "Web Apps"];
+const categories = ["All", "AI & Full-Stack", "Frontend Web Apps", "Core Java & Machine Learning"];
 
 const projects = [
   {
     title: "HireLens AI",
-    category: "AI & MERN",
-    tag: "Flagship AI Career Platform",
-    status: "Live & Deployed",
+    category: "AI & Full-Stack",
+    tag: "AI Interview Preparation Platform",
+    status: "Completed",
     isFeatured: true,
     problem:
-      "Job seekers struggle to customize their resumes for specific job descriptions, suffering low ATS scores and interview anxiety.",
+      "Job seekers struggle to customize their resumes and prepare effectively for role-specific technical interviews.",
     solution:
-      "A full-stack MERN web application with cookie-based JWT authentication, automated ATS score evaluation, custom roadmap generators, and mock interview preps powered by Gemini AI API.",
+      "Full-stack AI interview preparation platform built with React.js, Node.js, Express.js, MongoDB, and Gemini AI. Analyzes resumes against job descriptions to generate personalized interview prep reports.",
     impact:
-      "Generates downloadable PDF resumes via headless Puppeteer and safely handles model rate limit fallbacks.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Puppeteer", "Sass", "JWT Auth"],
+      "Secured with HTTP-only JWT authentication & RESTful APIs, and deployed on Vercel and Render.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini AI", "JWT Auth", "REST APIs"],
     github: "https://github.com/Shiva181006/HireLens-AI",
-    demo: "https://github.com/Shiva181006/HireLens-AI",
+    demo: null,
   },
   {
     title: "Smart Dine",
-    category: "Web Apps",
-    tag: "Restaurant Pre-Ordering App",
+    category: "Frontend Web Apps",
+    tag: "Restaurant Web Application",
     status: "Completed",
     isFeatured: false,
     problem:
-      "Diners experience long wait times when viewing menus and placing orders during peak hours.",
+      "Diners experience slow navigation workflows when reviewing menu categories and selecting items.",
     solution:
-      "A sleek React.js application with dynamic food menus, interactive table reservation flows, and centralized state management — reducing code repetition by ~40%.",
-    impact: "Streamlines pre-ordering and minimizes dining delay.",
+      "Responsive React restaurant web application featuring menu browsing, category filtering, cart interactions, and a mobile-friendly interface.",
+    impact:
+      "Improves user experience with modular React components and responsive CSS/Bootstrap layouts.",
     tech: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
-    github: "https://github.com/Shiva181006",
-    demo: "https://github.com/Shiva181006",
+    github: "https://github.com/Shiva181006/smartdine",
+    demo: null,
   },
   {
-    title: "Spam Detection Engine",
-    category: "Core Java & Algorithms",
-    tag: "Core Java • OOP Architecture",
+    title: "LoopLearn",
+    category: "Frontend Web Apps",
+    tag: "Spaced Repetition Platform",
     status: "Completed",
     isFeatured: false,
     problem:
-      "Most spam filtering demos rely heavily on external machine learning libraries without building core algorithmic understanding.",
+      "Software developers struggle to systematically organize and revise coding questions over time.",
     solution:
-      "A modular Core Java application utilizing object-oriented principles, string pattern matching, and keyword scoring algorithms — using zero external dependencies.",
-    impact: "Demonstrates fundamental OOP design and clean memory management.",
-    tech: ["Java", "OOP Principles", "String Algorithms", "Data Structures"],
-    github: "https://github.com/Shiva181006",
-    demo: "https://github.com/Shiva181006",
+      "React-based educational platform designed to help users organize coding problems, track revision progress, and follow a 4-11-21 day spaced repetition methodology.",
+    impact:
+      "Saves problem links, technical topics, and user notes to browser Local Storage for efficient progress tracking.",
+    tech: ["React.js", "JavaScript", "Local Storage"],
+    github: "https://github.com/Shiva181006/looplearn",
+    demo: null,
+  },
+  {
+    title: "Spam Detection System",
+    category: "Core Java & Machine Learning",
+    tag: "Java ML Application",
+    status: "Completed",
+    isFeatured: false,
+    problem:
+      "Classifying unsolicited spam messages accurately requires probabilistic classification algorithms.",
+    solution:
+      "Java-based spam detection system that applies the Naive Bayes machine learning algorithm to classify messages as spam or legitimate.",
+    impact:
+      "Demonstrates object-oriented programming principles and probabilistic classification algorithms.",
+    tech: ["Core Java", "OOP", "Naive Bayes", "Machine Learning"],
+    github: "https://github.com/Shiva181006/SpamShield-Java",
+    demo: null,
   },
 ];
 
@@ -288,20 +306,24 @@ export function ProjectsSection() {
                           href={p.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label="GitHub Repository"
+                          aria-label="View Source Code on GitHub"
+                          title="View Source Code on GitHub"
                           className="w-9 h-9 grid place-items-center rounded-full border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
                         >
                           <Github className="w-4 h-4" />
                         </a>
-                        <a
-                          href={p.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Live Demo"
-                          className="w-9 h-9 grid place-items-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 transition-opacity"
-                        >
-                          <ArrowUpRight className="w-4 h-4" />
-                        </a>
+                        {p.demo && (
+                          <a
+                            href={p.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Live Demo"
+                            title="Live Demo"
+                            className="w-9 h-9 grid place-items-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 transition-opacity"
+                          >
+                            <ArrowUpRight className="w-4 h-4" />
+                          </a>
+                        )}
                       </div>
                     </div>
 

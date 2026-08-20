@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const techs = [
-  "React.js", "JavaScript", "Node.js", "Tailwind CSS", "Bootstrap",
-  "MySQL", "MongoDB", "Git", "GitHub", "Vite", "Framer Motion",
-  "HTML5", "CSS3", "Sass / SCSS", "REST API", "Express.js", "Mongoose", "Puppeteer"
+  "React.js", "JavaScript", "Java", "SQL", "HTML5", "CSS3", "Bootstrap",
+  "Node.js", "Express.js", "MongoDB", "MySQL", "REST API", "JWT Auth",
+  "Gemini AI", "Git", "GitHub", "VS Code", "Postman", "Vercel", "Render"
 ];
 
 function Row({ reverse = false, speed = 35 }) {

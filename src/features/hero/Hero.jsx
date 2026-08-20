@@ -4,9 +4,10 @@ import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles, Code2, 
 import { Button } from "@/components/ui/button.jsx";
 
 const roles = [
-  "MERN Stack Engineer",
-  "React & Sass",
-  "Java & Algorithms Coder",
+  "Frontend Developer",
+  "React & JavaScript Developer",
+  "Java Developer",
+  "AI Project Builder",
   "Problem Solver"
 ];
 
@@ -69,10 +70,10 @@ export function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
               <span className="font-medium text-foreground flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-primary" /> Kanpur, UP
+                <MapPin className="w-3.5 h-3.5 text-primary" /> Gurgaon, Haryana, India
               </span>
               <span className="text-muted-foreground/60">•</span>
-              <span>Available for Roles & Internships</span>
+              <span>Available for Software & Frontend Roles</span>
             </motion.div>
 
             {/* Headline */}
@@ -86,7 +87,7 @@ export function Hero() {
                 Hi, I'm <span className="text-gradient font-serif italic font-bold">Shiva Kasaudhan</span>
               </h1>
               <p className="text-lg sm:text-2xl font-medium text-foreground/90">
-                Crafting human-centric digital tools ➜ <Typewriter />
+                Frontend Developer | React.js ➜ <Typewriter />
               </p>
             </motion.div>
 
@@ -97,9 +98,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed"
             >
-              MCA candidate at PSIT Kanpur building full-stack web products with{" "}
-              <strong className="text-foreground font-semibold">React, Node.js, Express & Java</strong>. 
-              I focus on clean API architecture, intuitive user interfaces, and smart Gemini AI workflows.
+              MCA graduate with an <strong className="text-foreground font-semibold">8.46/10 CGPA</strong> and hands-on experience building responsive React applications, full-stack projects, and AI-powered solutions using <strong className="text-foreground font-semibold">JavaScript, Java, React.js & Node.js</strong>.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -187,7 +186,7 @@ export function Hero() {
                     </div>
                     <div>
                       <h3 className="font-bold text-base text-foreground leading-tight">Shiva Kasaudhan</h3>
-                      <p className="text-xs text-muted-foreground font-mono">MCA @ PSIT Kanpur • 8.2 CGPA</p>
+                      <p className="text-xs text-muted-foreground font-mono">MCA Graduate • PSIT Kanpur • 8.46 CGPA</p>
                     </div>
                   </div>
                   <span className="p-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary">
@@ -199,11 +198,11 @@ export function Hero() {
                 <div className="space-y-3 text-xs">
                   <div className="p-3 rounded-xl bg-background/60 border border-border/80 space-y-1">
                     <div className="flex items-center justify-between font-mono text-[11px] text-primary font-bold">
-                      <span className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5" /> Primary Stack</span>
-                      <span>MERN + Java</span>
+                      <span className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5" /> Core Tech</span>
+                      <span>React + JS + Java</span>
                     </div>
                     <p className="text-muted-foreground text-[11px] leading-relaxed">
-                      React.js, Node.js, Express, MongoDB, Core Java Algorithms & Gemini LLM APIs.
+                      React.js, JavaScript, Java, SQL, HTML5, CSS3, Bootstrap, Node.js, Express & MongoDB.
                     </p>
                   </div>
 
@@ -213,7 +212,7 @@ export function Hero() {
                       <span>HireLens AI</span>
                     </div>
                     <p className="text-muted-foreground text-[11px] leading-relaxed">
-                      AI Resume & ATS Evaluator with automated JWT auth, Puppeteer PDF exports & Gemini model fallbacks.
+                      Full-stack AI Interview Prep platform with Gemini AI API analysis, JWT authentication & REST APIs.
                     </p>
                   </div>
                 </div>
@@ -221,23 +220,27 @@ export function Hero() {
                 {/* Personal Motto Quote */}
                 <div className="p-3.5 rounded-xl bg-gradient-primary/10 border border-primary/20 text-xs">
                   <p className="text-foreground/90 font-serif italic leading-relaxed text-sm">
-                    "I believe in clean architecture, intentional UI design, and code that solves genuine human problems."
+                    "Passionate about creating efficient, responsive web applications with clean code and intuitive user experiences."
                   </p>
                 </div>
 
                 {/* Quick stats pills */}
-                <div className="grid grid-cols-3 gap-2 text-center pt-1 font-mono">
+                <div className="grid grid-cols-4 gap-1.5 text-center pt-1 font-mono">
                   <div className="p-2 rounded-lg bg-background/40 border border-border/60">
-                    <div className="text-sm font-bold text-primary">15+</div>
-                    <div className="text-[9px] text-muted-foreground uppercase">Projects</div>
+                    <div className="text-sm font-bold text-primary">8.46</div>
+                    <div className="text-[8px] text-muted-foreground uppercase">MCA CGPA</div>
                   </div>
                   <div className="p-2 rounded-lg bg-background/40 border border-border/60">
-                    <div className="text-sm font-bold text-primary">800+</div>
-                    <div className="text-[9px] text-muted-foreground uppercase">Commits</div>
+                    <div className="text-sm font-bold text-primary">100+</div>
+                    <div className="text-[8px] text-muted-foreground uppercase">DSA Solved</div>
                   </div>
                   <div className="p-2 rounded-lg bg-background/40 border border-border/60">
-                    <div className="text-sm font-bold text-primary">5</div>
-                    <div className="text-[9px] text-muted-foreground uppercase">Certs</div>
+                    <div className="text-sm font-bold text-primary">100%</div>
+                    <div className="text-[8px] text-muted-foreground uppercase">Attendance</div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-background/40 border border-border/60">
+                    <div className="text-sm font-bold text-primary">3+</div>
+                    <div className="text-[8px] text-muted-foreground uppercase">Featured Projects</div>
                   </div>
                 </div>
 

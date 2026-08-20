@@ -3,49 +3,25 @@ import { Award, ExternalLink, ShieldCheck } from "lucide-react";
 
 const certs = [
   {
-    title: "SOAR – AI to be Aware",
-    issuer: "Microsoft (NSQF Framework)",
-    grade: "Completed",
+    title: "SOAR - AI to be Aware",
+    issuer: "Microsoft (NCVET)",
+    grade: "Certified",
     link: "https://drive.google.com/file/d/1nZnp0kZgprA6VDiPzLe0FOxcnvUo1KKW/preview",
-  },
-  {
-    title: "Programming in Modern C++",
-    issuer: "NPTEL (IIT Kharagpur)",
-    grade: "Completed",
-    link: "https://drive.google.com/file/d/16cw53kze3oCe4AN3XpK9msoNH_ekIOtF/preview",
-  },
-  {
-    title: "AWS Cloud Practitioner Essentials",
-    issuer: "AWS Training & Certification",
-    grade: "Completed",
-    link: "https://drive.google.com/file/d/1CHJytXgRcSnNvfBTlISNXlxkUvn_fXrA/preview",
-  },
-  {
-    title: "Problem Solving in C",
-    issuer: "NPTEL",
-    grade: "Elite Grade",
-    link: "https://drive.google.com/file/d/1CbxQ548YxEmc05KQbA2MQUyR2cK7YfoP/preview",
   },
   {
     title: "YUVA AI For All",
     issuer: "IndiaAI (TCS iON)",
-    grade: "Completed",
+    grade: "Certified",
     link: "https://drive.google.com/file/d/1IOHAN7PwxFDfmYHpN-C7AGS42tax908d/preview",
   },
   {
-    title: "Database Management",
+    title: "Database Management System (DBMS)",
     issuer: "Infosys Springboard",
-    grade: "Completed",
+    grade: "Certified",
     link: "https://drive.google.com/file/d/16uqjeRfoJtNQMaIfQ8bhBWuUPEzJuBw9/preview",
   },
   {
-    title: "Programming Fundamentals in Python",
-    issuer: "Infosys Springboard",
-    grade: "Completed",
-    link: "https://drive.google.com/file/d/1y9AatkwzaG6S79xe7yA1PvwwWeNBK1MG/preview",
-  },
-  {
-    title: "Java (Basics)",
+    title: "Java (Basic)",
     issuer: "HackerRank",
     grade: "Certified",
     link: "https://drive.google.com/file/d/1lf7e2Ee9F1RMrOuEXByCr4Htmc1KNTE7/preview",
@@ -55,6 +31,12 @@ const certs = [
     issuer: "HackerRank",
     grade: "Certified",
     link: "https://drive.google.com/file/d/12jkSEJbX2mSY4N1JUsC-H12wVXSHH9CH/preview",
+  },
+  {
+    title: "Problem Solving through Programming in C",
+    issuer: "NPTEL",
+    grade: "Elite Grade",
+    link: "https://drive.google.com/file/d/1CbxQ548YxEmc05KQbA2MQUyR2cK7YfoP/preview",
   },
 ];
 

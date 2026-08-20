@@ -48,18 +48,17 @@ export function ContactSection() {
         });
         form.reset();
       } else {
-        // Backup direct submission
-        toast.success("Message dispatched!", {
-          description: "Thank you for reaching out! Your message was submitted successfully.",
-          icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
+        toast.error("Message could not be sent. Please try again.", {
+          description: "Alternatively, feel free to email me directly at shivakasaudhan817@gmail.com.",
         });
-        form.reset();
+        // Retain user input on failure - do not reset form
       }
     } catch (err) {
       console.error("Submission Error:", err);
-      toast.error("Network Error: Could not connect to mail service.", {
-        description: "Please check your internet connection and try again.",
+      toast.error("Message could not be sent due to network error.", {
+        description: "Please check your internet connection and try again or email shivakasaudhan817@gmail.com.",
       });
+      // Retain user input on failure - do not reset form
     } finally {
       setSending(false);
     }
@@ -84,7 +83,7 @@ export function ContactSection() {
             Let's <span className="text-gradient">connect & collaborate</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Interested in hiring me for software development roles, internships, or technical projects? Drop a message below.
+            Interested in hiring me for frontend development or software developer roles? Drop a message below.
           </p>
         </motion.div>
 
@@ -107,7 +106,7 @@ export function ContactSection() {
                 href: "mailto:shivakasaudhan817@gmail.com",
               },
               { icon: Phone, label: "Phone", value: "+91 73984 19325", href: "tel:+917398419325" },
-              { icon: MapPin, label: "Location", value: "Kanpur, Uttar Pradesh, India", href: "#" },
+              { icon: MapPin, label: "Location", value: "Gurgaon, Haryana, India", href: "#" },
             ].map((item) => (
               <a
                 key={item.label}

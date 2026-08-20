@@ -10,7 +10,7 @@ const links = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#journey", label: "Journey" },
-  { href: "#testimonials", label: "Reviews" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -160,7 +160,7 @@ export function Navbar() {
               ))}
             </ul>
             <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
-              <span className="text-xs font-mono text-muted-foreground">📍 Kanpur, UP</span>
+              <span className="text-xs font-mono text-muted-foreground">📍 Gurgaon, Haryana</span>
               <Button
                 asChild
                 size="sm"
