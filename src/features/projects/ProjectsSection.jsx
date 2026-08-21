@@ -155,6 +155,22 @@ const projects = [
       "Secured with HTTP-only JWT authentication & RESTful APIs, and deployed on Vercel and Render.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini AI", "JWT Auth", "REST APIs"],
     github: "https://github.com/Shiva181006/HireLens-AI",
+    demo: "https://hire-lens-mzm5pjeuu-shiva-kasaudhan-dev.vercel.app/",
+  },
+  {
+    title: "LoopLearn",
+    category: "Frontend Web Apps",
+    tag: "Spaced Repetition Platform",
+    status: "Completed",
+    isFeatured: false,
+    problem:
+      "Software developers struggle to systematically organize and revise coding questions over time.",
+    solution:
+      "React-based educational platform designed to help users organize coding problems, track revision progress, and follow a 4-11-21 day spaced repetition methodology.",
+    impact:
+      "Saves problem links, technical topics, and user notes to browser Local Storage for efficient progress tracking.",
+    tech: ["React.js", "JavaScript", "Local Storage"],
+    github: "https://github.com/Shiva181006/looplearn",
     demo: null,
   },
   {
@@ -171,22 +187,6 @@ const projects = [
       "Improves user experience with modular React components and responsive CSS/Bootstrap layouts.",
     tech: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
     github: "https://github.com/Shiva181006/smartdine",
-    demo: null,
-  },
-  {
-    title: "LoopLearn",
-    category: "Frontend Web Apps",
-    tag: "Spaced Repetition Platform",
-    status: "Completed",
-    isFeatured: false,
-    problem:
-      "Software developers struggle to systematically organize and revise coding questions over time.",
-    solution:
-      "React-based educational platform designed to help users organize coding problems, track revision progress, and follow a 4-11-21 day spaced repetition methodology.",
-    impact:
-      "Saves problem links, technical topics, and user notes to browser Local Storage for efficient progress tracking.",
-    tech: ["React.js", "JavaScript", "Local Storage"],
-    github: "https://github.com/Shiva181006/looplearn",
     demo: null,
   },
   {
