@@ -77,6 +77,40 @@ function Counter({ value, suffix, decimals = 0 }) {
   );
 }
 
+function AboutAvatar() {
+  const [imgSrc, setImgSrc] = useState("/profile.jpg");
+  const [hasError, setHasError] = useState(false);
+
+  const handleErr = () => {
+    if (imgSrc === "/profile.jpg") {
+      setImgSrc("/profile.png");
+    } else if (imgSrc === "/profile.png") {
+      setImgSrc("/profile.jpeg");
+    } else {
+      setHasError(true);
+    }
+  };
+
+  return (
+    <div className="relative shrink-0">
+      <div className="w-11 h-11 rounded-xl overflow-hidden border border-primary/40 bg-card shadow-sm grid place-items-center">
+        {!hasError ? (
+          <img
+            src={imgSrc}
+            alt="Shiva Kasaudhan"
+            className="w-full h-full object-cover object-top"
+            onError={handleErr}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-primary grid place-items-center text-primary-foreground font-extrabold text-sm">
+            SK
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function AboutSection() {
   return (
     <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
@@ -167,12 +201,15 @@ export function AboutSection() {
                 "Great web products are created when intentional UI design, structured code, and performance serve real user goals."
               </blockquote>
 
-              <div className="pt-4 border-t border-border flex items-center justify-between">
-                <div>
-                  <div className="font-bold text-sm text-foreground">Shiva Kasaudhan</div>
-                  <div className="text-xs text-muted-foreground font-mono">Frontend Developer • MCA Graduate</div>
+              <div className="pt-4 border-t border-border flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <AboutAvatar />
+                  <div>
+                    <div className="font-bold text-sm text-foreground">Shiva Kasaudhan</div>
+                    <div className="text-xs text-muted-foreground font-mono">Frontend Developer • MCA Graduate</div>
+                  </div>
                 </div>
-                <div className="font-serif italic text-primary text-xl font-bold">
+                <div className="font-serif italic text-primary text-lg sm:text-xl font-bold shrink-0">
                   Shiva K.
                 </div>
               </div>

@@ -44,6 +44,41 @@ function Typewriter() {
   );
 }
 
+function ProfileAvatar() {
+  const [imgSrc, setImgSrc] = useState("/profile.jpg");
+  const [hasError, setHasError] = useState(false);
+
+  const handleErr = () => {
+    if (imgSrc === "/profile.jpg") {
+      setImgSrc("/profile.png");
+    } else if (imgSrc === "/profile.png") {
+      setImgSrc("/profile.jpeg");
+    } else {
+      setHasError(true);
+    }
+  };
+
+  return (
+    <div className="relative group shrink-0">
+      <div className="absolute -inset-0.5 bg-gradient-primary rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300" />
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-primary/40 bg-card shadow-glow grid place-items-center">
+        {!hasError ? (
+          <img
+            src={imgSrc}
+            alt="Shiva Kasaudhan"
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            onError={handleErr}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-primary grid place-items-center text-primary-foreground font-extrabold text-xl shadow-glow">
+            SK
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <section
@@ -180,10 +215,8 @@ export function Hero() {
                 
                 {/* Header Profile Badge */}
                 <div className="flex items-center justify-between pb-4 border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-gradient-primary grid place-items-center text-primary-foreground font-extrabold text-base shadow-glow">
-                      SK
-                    </div>
+                  <div className="flex items-center gap-3.5">
+                    <ProfileAvatar />
                     <div>
                       <h3 className="font-bold text-base text-foreground leading-tight">Shiva Kasaudhan</h3>
                       <p className="text-xs text-muted-foreground font-mono">MCA Graduate • PSIT Kanpur • 8.46 CGPA</p>
