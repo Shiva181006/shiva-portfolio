@@ -215,7 +215,10 @@ export function ProjectsSection() {
   );
 
   return (
-    <section id="projects" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-grid bg-emerald-glow-top overflow-hidden">
+      {/* Soft ambient background wash */}
+      <div className="absolute top-1/3 right-0 w-[500px] h-[350px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}

@@ -82,8 +82,12 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden bg-background"
+      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden bg-background bg-stone-grid bg-emerald-glow-top"
     >
+      {/* Soft ambient background wash */}
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[320px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-10 w-[300px] h-[200px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           

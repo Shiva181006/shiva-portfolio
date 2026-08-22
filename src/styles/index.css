@@ -107,11 +107,45 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-subtle);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
   .craft-card:hover {
     border-color: #D6D3D1;
     box-shadow: var(--shadow-card);
+  }
+
+  /* Architectural Stone Background Patterns */
+  .bg-stone-grid {
+    background-image: 
+      linear-gradient(to right, rgba(231, 229, 228, 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(231, 229, 228, 0.5) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .dark .bg-stone-grid {
+    background-image: 
+      linear-gradient(to right, rgba(68, 64, 60, 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(68, 64, 60, 0.35) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .bg-stone-dots {
+    background-image: radial-gradient(rgba(120, 113, 108, 0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .dark .bg-stone-dots {
+    background-image: radial-gradient(rgba(168, 162, 158, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-emerald-glow-top {
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(22, 101, 52, 0.06), transparent 75%);
+  }
+  .dark .bg-emerald-glow-top {
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(21, 128, 61, 0.10), transparent 75%);
+  }
+
+  .bg-emerald-glow-bottom {
+    background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(22, 101, 52, 0.05), transparent 75%);
   }
 }
 

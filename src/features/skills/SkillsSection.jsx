@@ -60,7 +60,10 @@ const groups = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-dots overflow-hidden">
+      {/* Soft ambient background wash */}
+      <div className="absolute bottom-10 left-1/4 w-[400px] h-[300px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}

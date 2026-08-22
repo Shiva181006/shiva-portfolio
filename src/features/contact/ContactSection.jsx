@@ -65,7 +65,10 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-dots bg-emerald-glow-top overflow-hidden">
+      {/* Soft ambient background wash */}
+      <div className="absolute top-1/2 right-10 w-[450px] h-[350px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}

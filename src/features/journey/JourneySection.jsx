@@ -48,7 +48,10 @@ const timeline = [
 
 export function JourneySection() {
   return (
-    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-grid bg-emerald-glow-top overflow-hidden">
+      {/* Soft ambient background wash */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
