@@ -60,7 +60,7 @@ function ProfileAvatar() {
 
   return (
     <div className="relative group shrink-0">
-      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-border bg-card shadow-subtle grid place-items-center">
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border border-[#D5CCBC] bg-[#F8F4EC] shadow-subtle grid place-items-center">
         {!hasError ? (
           <img
             src={imgSrc}
@@ -69,7 +69,7 @@ function ProfileAvatar() {
             onError={handleErr}
           />
         ) : (
-          <div className="w-full h-full bg-primary grid place-items-center text-white font-bold text-xl">
+          <div className="w-full h-full bg-[#A3432F] grid place-items-center text-white font-bold text-xl">
             SK
           </div>
         )}
@@ -82,7 +82,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden bg-background"
+      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden bg-[#F2EDE3]"
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -95,17 +95,17 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs text-muted-foreground shadow-subtle"
+              className="inline-flex items-center gap-2 rounded-full border border-[#D5CCBC] bg-[#F8F4EC] px-3.5 py-1.5 text-xs text-[#716B61] shadow-subtle"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#A3432F] opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A3432F]" />
               </span>
-              <span className="font-medium text-foreground flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-accent" /> Gurgaon, Haryana, India
+              <span className="font-medium text-[#181715] flex items-center gap-1 font-mono">
+                <MapPin className="w-3.5 h-3.5 text-[#A3432F]" /> Gurgaon, Haryana, India
               </span>
-              <span className="text-muted-foreground/60">•</span>
-              <span>Available for Software & Frontend Roles</span>
+              <span className="text-[#716B61]/60">•</span>
+              <span className="font-mono text-[11px]">Available for Software & Frontend Roles</span>
             </motion.div>
 
             {/* Headline */}
@@ -115,10 +115,13 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="space-y-3"
             >
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-foreground">
-                Hi, I'm <span className="text-accent font-serif italic font-bold">Shiva Kasaudhan</span>
+              <div className="text-xs font-mono text-[#A3432F] font-bold tracking-widest uppercase">
+                AVAILABLE FOR OPPORTUNITIES
+              </div>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#181715]">
+                Hi, I'm <span className="text-[#A3432F] font-serif italic font-bold">Shiva Kasaudhan</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-medium text-foreground/90">
+              <p className="text-lg sm:text-2xl font-medium text-[#181715]/90 font-sans">
                 Frontend Developer | React.js ➜ <Typewriter />
               </p>
             </motion.div>
@@ -128,9 +131,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed"
+              className="text-sm sm:text-base text-[#716B61] max-w-xl leading-relaxed"
             >
-              MCA graduate with an <strong className="text-foreground font-semibold">8.46/10 CGPA</strong> and hands-on experience building responsive React applications, full-stack projects, and AI-powered solutions using <strong className="text-foreground font-semibold">JavaScript, Java, React.js & Node.js</strong>.
+              MCA graduate with an <strong className="text-[#181715] font-semibold">8.46/10 CGPA</strong> and hands-on experience building responsive React applications, full-stack projects, and AI-powered solutions using <strong className="text-[#181715] font-semibold">JavaScript, Java, React.js & Node.js</strong>.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -143,7 +146,7 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary-dark text-white border-0 rounded-lg text-xs sm:text-sm font-semibold px-6 shadow-subtle transition-colors"
+                className="bg-[#A3432F] hover:bg-[#863525] text-white border-0 rounded-md text-xs sm:text-sm font-semibold px-6 shadow-subtle transition-colors"
               >
                 <a href="#projects" className="flex items-center gap-2">
                   View Selected Work <ArrowRight className="w-4 h-4" />
@@ -154,7 +157,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-lg border-border bg-card hover:bg-muted text-foreground text-xs sm:text-sm font-medium px-5 transition-colors"
+                className="rounded-md border-[#D5CCBC] bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#181715] text-xs sm:text-sm font-medium px-5 transition-colors"
               >
                 <a
                   href="https://drive.google.com/file/d/1VZQrrhFqv1eo_pYZmuJv_TzGL6RmMbaV/view?preview"
@@ -162,7 +165,7 @@ export function Hero() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5"
                 >
-                  <Download className="w-4 h-4 text-accent" /> Download Resume
+                  <Download className="w-4 h-4 text-[#A3432F]" /> Download Resume
                 </a>
               </Button>
             </motion.div>
@@ -174,8 +177,8 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center gap-3 pt-3"
             >
-              <span className="text-xs uppercase tracking-widest text-muted-foreground font-mono font-bold">Connect</span>
-              <div className="h-px w-8 bg-border" />
+              <span className="text-xs uppercase tracking-widest text-[#716B61] font-mono font-bold">Connect</span>
+              <div className="h-px w-8 bg-[#D5CCBC]" />
               <div className="flex gap-2">
                 {[
                   { icon: Github, href: "https://github.com/Shiva181006", label: "GitHub" },
@@ -188,7 +191,7 @@ export function Hero() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card text-muted-foreground hover:text-accent hover:border-accent/40 transition-all shadow-subtle"
+                    className="w-9 h-9 grid place-items-center rounded-md border border-[#D5CCBC] bg-[#F8F4EC] text-[#716B61] hover:text-[#A3432F] hover:border-[#A3432F]/50 transition-all shadow-subtle"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -198,76 +201,76 @@ export function Hero() {
 
           </div>
 
-          {/* Right Column: Handcrafted Human Developer Card */}
+          {/* Right Column: Handcrafted Editorial Developer Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none"
           >
-            <div className="relative rounded-xl border border-border bg-card p-6 shadow-card space-y-5">
+            <div className="relative rounded-md border border-[#D5CCBC] bg-[#F8F4EC] p-6 shadow-card space-y-5">
               
               {/* Header Profile Badge */}
-              <div className="flex items-center justify-between pb-4 border-b border-border">
+              <div className="flex items-center justify-between pb-4 border-b border-[#D5CCBC]">
                 <div className="flex items-center gap-3.5">
                   <ProfileAvatar />
                   <div>
-                    <h3 className="font-bold text-base text-foreground leading-tight">Shiva Kasaudhan</h3>
-                    <p className="text-xs text-muted-foreground font-mono">MCA Graduate • PSIT Kanpur • 8.46 CGPA</p>
+                    <h3 className="font-bold text-base text-[#181715] leading-tight">Shiva Kasaudhan</h3>
+                    <p className="text-xs text-[#716B61] font-mono">MCA Graduate • PSIT Kanpur • 8.46 CGPA</p>
                   </div>
                 </div>
-                <span className="p-1.5 rounded-lg bg-emerald-950/40 border border-emerald-800/40 text-accent">
+                <span className="p-1.5 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] text-[#D6A756]">
                   <UserCheck className="w-4 h-4" />
                 </span>
               </div>
 
               {/* Craftsmanship Highlights */}
               <div className="space-y-3 text-xs">
-                <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
-                  <div className="flex items-center justify-between font-mono text-[11px] text-accent font-bold">
+                <div className="p-3 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] space-y-1">
+                  <div className="flex items-center justify-between font-mono text-[11px] text-[#A3432F] font-bold">
                     <span className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5" /> Core Tech</span>
                     <span>React + JS + Java</span>
                   </div>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                  <p className="text-[#716B61] text-[11px] leading-relaxed">
                     React.js, JavaScript, Java, SQL, HTML5, CSS3, Bootstrap, Node.js, Express & MongoDB.
                   </p>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
-                  <div className="flex items-center justify-between font-mono text-[11px] text-accent font-bold">
+                <div className="p-3 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] space-y-1">
+                  <div className="flex items-center justify-between font-mono text-[11px] text-[#A3432F] font-bold">
                     <span className="flex items-center gap-1.5"><Terminal className="w-3.5 h-3.5" /> Flagship Build</span>
                     <span>HireLens AI</span>
                   </div>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                  <p className="text-[#716B61] text-[11px] leading-relaxed">
                     Full-stack AI Interview Prep platform with Gemini AI API analysis, JWT authentication & REST APIs.
                   </p>
                 </div>
               </div>
 
               {/* Personal Motto Quote */}
-              <div className="p-3.5 rounded-lg bg-[#0C0F0D] border border-border text-xs">
-                <p className="text-foreground/90 font-serif italic leading-relaxed text-sm">
+              <div className="p-3.5 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] text-xs">
+                <p className="text-[#181715]/90 font-serif italic leading-relaxed text-sm">
                   "Passionate about creating efficient, responsive web applications with clean code and intuitive user experiences."
                 </p>
               </div>
 
               {/* Quick stats pills */}
               <div className="grid grid-cols-4 gap-1.5 text-center pt-1 font-mono">
-                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
-                  <div className="text-sm font-bold text-accent">8.46</div>
-                  <div className="text-[8px] text-muted-foreground uppercase">MCA CGPA</div>
+                <div className="p-2 rounded-md bg-[#F2EDE3] border border-[#D5CCBC]">
+                  <div className="text-sm font-bold text-[#A3432F]">8.46</div>
+                  <div className="text-[8px] text-[#716B61] uppercase">MCA CGPA</div>
                 </div>
-                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
-                  <div className="text-sm font-bold text-accent">100+</div>
-                  <div className="text-[8px] text-muted-foreground uppercase">DSA Solved</div>
+                <div className="p-2 rounded-md bg-[#F2EDE3] border border-[#D5CCBC]">
+                  <div className="text-sm font-bold text-[#A3432F]">100+</div>
+                  <div className="text-[8px] text-[#716B61] uppercase">DSA Solved</div>
                 </div>
-                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
-                  <div className="text-sm font-bold text-accent">100%</div>
-                  <div className="text-[8px] text-muted-foreground uppercase">Attendance</div>
+                <div className="p-2 rounded-md bg-[#F2EDE3] border border-[#D5CCBC]">
+                  <div className="text-sm font-bold text-[#A3432F]">100%</div>
+                  <div className="text-[8px] text-[#716B61] uppercase">Attendance</div>
                 </div>
-                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
-                  <div className="text-sm font-bold text-accent">3+</div>
-                  <div className="text-[8px] text-muted-foreground uppercase">Featured Projects</div>
+                <div className="p-2 rounded-md bg-[#F2EDE3] border border-[#D5CCBC]">
+                  <div className="text-sm font-bold text-[#A3432F]">3+</div>
+                  <div className="text-[8px] text-[#716B61] uppercase">Featured Projects</div>
                 </div>
               </div>
 

@@ -65,7 +65,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F2EDE3] overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
@@ -76,13 +76,13 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
-            <Mail className="w-3.5 h-3.5" /> Get In Touch
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+            <Mail className="w-3.5 h-3.5" /> 06 — Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            Let's <span className="text-accent whitespace-nowrap">connect & collaborate</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
+            Let's <span className="text-[#A3432F] whitespace-nowrap">connect & collaborate</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#716B61] leading-relaxed">
             Interested in hiring me for frontend development or software developer roles? Drop a message below.
           </p>
         </motion.div>
@@ -111,14 +111,14 @@ export function ContactSection() {
               <a
                 key={item.label}
                 href={item.href}
-                className="craft-card p-4.5 flex items-center gap-4 group bg-card border border-border"
+                className="craft-card p-4.5 flex items-center gap-4 group bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#0C0F0D] border border-border grid place-items-center text-accent shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] grid place-items-center text-[#A3432F] shrink-0 group-hover:scale-105 transition-transform">
                   <item.icon className="w-4.5 h-4.5" />
                 </div>
                 <div className="overflow-hidden">
-                  <div className="text-[10px] text-muted-foreground font-mono uppercase">{item.label}</div>
-                  <div className="font-bold text-xs sm:text-sm mt-0.5 text-foreground truncate">{item.value}</div>
+                  <div className="text-[10px] text-[#716B61] font-mono uppercase">{item.label}</div>
+                  <div className="font-bold text-xs sm:text-sm mt-0.5 text-[#181715] truncate">{item.value}</div>
                 </div>
               </a>
             ))}
@@ -129,7 +129,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-accent transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-md border border-[#D5CCBC] bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#716B61] hover:text-[#A3432F] transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Github className="w-4 h-4" /> GitHub</span>
               </a>
@@ -138,7 +138,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-accent transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-md border border-[#D5CCBC] bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#716B61] hover:text-[#A3432F] transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> LinkedIn</span>
               </a>
@@ -153,22 +153,22 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 craft-card p-6 sm:p-8 space-y-4 font-sans bg-card border border-border"
+            className="lg:col-span-3 craft-card p-6 sm:p-8 space-y-4 font-sans bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1.5 block font-bold">
+                <label className="text-[10px] font-mono text-[#716B61] uppercase tracking-wider mb-1.5 block font-bold">
                   Your Name
                 </label>
                 <Input
                   name="name"
                   required
                   placeholder="e.g. Rahul Sharma"
-                  className="bg-[#0C0F0D] border-border h-11 text-xs rounded-lg text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+                  className="bg-[#F2EDE3] border-[#D5CCBC] h-11 text-xs rounded-md text-[#181715] placeholder:text-[#716B61] focus-visible:ring-[#A3432F]"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1.5 block font-bold">
+                <label className="text-[10px] font-mono text-[#716B61] uppercase tracking-wider mb-1.5 block font-bold">
                   Your Email
                 </label>
                 <Input
@@ -176,13 +176,13 @@ export function ContactSection() {
                   type="email"
                   required
                   placeholder="you@company.com"
-                  className="bg-[#0C0F0D] border-border h-11 text-xs rounded-lg text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+                  className="bg-[#F2EDE3] border-[#D5CCBC] h-11 text-xs rounded-md text-[#181715] placeholder:text-[#716B61] focus-visible:ring-[#A3432F]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-1.5 block font-bold">
+              <label className="text-[10px] font-mono text-[#716B61] uppercase tracking-wider mb-1.5 block font-bold">
                 Your Message
               </label>
               <Textarea
@@ -190,7 +190,7 @@ export function ContactSection() {
                 required
                 rows={4}
                 placeholder="Share your opportunity or project details..."
-                className="bg-[#0C0F0D] border-border resize-none text-xs rounded-lg text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+                className="bg-[#F2EDE3] border-[#D5CCBC] resize-none text-xs rounded-md text-[#181715] placeholder:text-[#716B61] focus-visible:ring-[#A3432F]"
               />
             </div>
 
@@ -198,7 +198,7 @@ export function ContactSection() {
               type="submit"
               disabled={sending}
               size="lg"
-              className="w-full bg-primary hover:bg-primary-dark text-white rounded-lg font-semibold text-xs py-3 border-0 transition-colors shadow-subtle"
+              className="w-full bg-[#A3432F] hover:bg-[#863525] text-white rounded-md font-semibold text-xs py-3 border-0 transition-colors shadow-subtle"
             >
               {sending ? "Sending..." : (
                 <span className="flex items-center justify-center gap-2">

@@ -18,7 +18,7 @@ function Row({ reverse = false, speed = 35 }) {
         {list.map((t, i) => (
           <span
             key={i}
-            className="px-4 py-1.5 rounded-full border border-border bg-card text-xs font-mono text-muted-foreground hover:text-foreground hover:border-accent/40 transition-colors"
+            className="px-4 py-1.5 rounded-full border border-[#D5CCBC] bg-[#F8F4EC] text-xs font-mono text-[#716B61] hover:text-[#181715] hover:border-[#A3432F]/50 transition-colors"
           >
             {t}
           </span>
@@ -30,10 +30,10 @@ function Row({ reverse = false, speed = 35 }) {
 
 export function TechMarquee() {
   return (
-    <section className="relative py-8 border-y border-border bg-background select-none overflow-hidden">
+    <section className="relative py-8 border-y border-[#D5CCBC] bg-[#F2EDE3] select-none overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-3">
-          <span className="text-[10px] font-mono text-accent font-bold uppercase tracking-widest">
+          <span className="text-[10px] font-mono text-[#A3432F] font-bold uppercase tracking-widest">
             ⚡ Tech Stack & Technologies
           </span>
         </div>

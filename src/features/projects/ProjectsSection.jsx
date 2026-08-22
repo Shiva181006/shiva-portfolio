@@ -229,27 +229,27 @@ export function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
-            <FolderGit2 className="w-3.5 h-3.5" /> Selected Portfolio Projects
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+            <FolderGit2 className="w-3.5 h-3.5" /> 02 — Selected Work
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            Crafted with <span className="text-accent whitespace-nowrap">purpose & precision</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
+            Crafted with <span className="text-[#A3432F] whitespace-nowrap">purpose & precision</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#716B61] leading-relaxed">
             Real applications built to solve genuine technical and user challenges.
           </p>
         </motion.div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-border pb-4 font-mono text-xs">
+        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-[#D5CCBC] pb-4 font-mono text-xs">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`px-4 py-2 rounded-md font-medium transition-all ${
                 activeCategory === cat
-                  ? "bg-primary text-white font-semibold shadow-subtle"
-                  : "bg-card hover:bg-muted text-muted-foreground hover:text-foreground border border-border"
+                  ? "bg-[#A3432F] text-white font-semibold shadow-subtle"
+                  : "bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#716B61] hover:text-[#181715] border border-[#D5CCBC]"
               }`}
             >
               {cat}
@@ -268,7 +268,7 @@ export function ProjectsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="craft-card p-6 sm:p-8 bg-card border border-border"
+                className="craft-card p-6 sm:p-8 bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   
@@ -277,18 +277,18 @@ export function ProjectsSection() {
                     {p.isFeatured ? (
                       <HireLensInteractiveWidget />
                     ) : (
-                      <div className="rounded-xl border border-border bg-[#0C0F0D] p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
+                      <div className="rounded-md border border-[#D5CCBC] bg-[#F2EDE3] p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-mono text-muted-foreground">{p.tag}</span>
-                          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-accent border border-emerald-800/40">
+                          <span className="text-xs font-mono text-[#716B61]">{p.tag}</span>
+                          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#F8F4EC] text-[#A3432F] border border-[#D5CCBC]">
                             {p.status}
                           </span>
                         </div>
                         <div className="my-auto text-center">
-                          <div className="text-5xl font-mono font-extrabold text-muted-foreground/30 mb-2">0{i + 1}</div>
-                          <h4 className="text-xl font-bold text-foreground">{p.title}</h4>
+                          <div className="text-5xl font-mono font-extrabold text-[#716B61]/30 mb-2">0{i + 1}</div>
+                          <h4 className="text-xl font-bold text-[#181715]">{p.title}</h4>
                         </div>
-                        <div className="text-[11px] font-mono text-muted-foreground">
+                        <div className="text-[11px] font-mono text-[#716B61]">
                           {p.category}
                         </div>
                       </div>
@@ -299,8 +299,8 @@ export function ProjectsSection() {
                   <div className="lg:col-span-7 space-y-5">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <span className="text-xs font-mono text-accent font-semibold">{p.tag}</span>
-                        <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-1 tracking-tight">
+                        <span className="text-xs font-mono text-[#A3432F] font-semibold">{p.tag}</span>
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-[#181715] mt-1 tracking-tight">
                           {p.title}
                         </h3>
                       </div>
@@ -311,7 +311,7 @@ export function ProjectsSection() {
                           rel="noopener noreferrer"
                           aria-label="View Source Code on GitHub"
                           title="View Source Code on GitHub"
-                          className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-accent transition-colors"
+                          className="w-9 h-9 grid place-items-center rounded-md border border-[#D5CCBC] bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#716B61] hover:text-[#A3432F] transition-colors"
                         >
                           <Github className="w-4 h-4" />
                         </a>
@@ -322,7 +322,7 @@ export function ProjectsSection() {
                             rel="noopener noreferrer"
                             aria-label="Live Demo"
                             title="Live Demo"
-                            className="w-9 h-9 grid place-items-center rounded-lg bg-primary hover:bg-primary-dark text-white transition-colors"
+                            className="w-9 h-9 grid place-items-center rounded-md bg-[#A3432F] hover:bg-[#863525] text-white transition-colors"
                           >
                             <ArrowUpRight className="w-4 h-4" />
                           </a>
@@ -332,17 +332,17 @@ export function ProjectsSection() {
 
                     {/* Problem / Solution / Impact Triad */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-sans">
-                      <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
-                        <div className="font-mono text-[10px] uppercase font-bold text-accent">Problem</div>
-                        <p className="text-muted-foreground leading-relaxed text-[11px]">{p.problem}</p>
+                      <div className="p-3 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-[#A3432F]">Problem</div>
+                        <p className="text-[#716B61] leading-relaxed text-[11px]">{p.problem}</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
-                        <div className="font-mono text-[10px] uppercase font-bold text-accent">Solution</div>
-                        <p className="text-muted-foreground leading-relaxed text-[11px]">{p.solution}</p>
+                      <div className="p-3 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-[#A3432F]">Solution</div>
+                        <p className="text-[#716B61] leading-relaxed text-[11px]">{p.solution}</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
-                        <div className="font-mono text-[10px] uppercase font-bold text-accent">Impact</div>
-                        <p className="text-muted-foreground leading-relaxed text-[11px]">{p.impact}</p>
+                      <div className="p-3 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-[#A3432F]">Impact</div>
+                        <p className="text-[#716B61] leading-relaxed text-[11px]">{p.impact}</p>
                       </div>
                     </div>
 
@@ -351,9 +351,9 @@ export function ProjectsSection() {
                       {p.tech.map((t) => (
                         <span
                           key={t}
-                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-border bg-[#0C0F0D] text-muted-foreground"
+                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-[#D5CCBC] bg-[#F2EDE3] text-[#716B61]"
                         >
-                          <Sparkle className="w-2.5 h-2.5 text-accent" /> {t}
+                          <Sparkle className="w-2.5 h-2.5 text-[#A3432F]" /> {t}
                         </span>
                       ))}
                     </div>

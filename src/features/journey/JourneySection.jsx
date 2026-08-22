@@ -48,7 +48,7 @@ const timeline = [
 
 export function JourneySection() {
   return (
-    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
+    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F2EDE3] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
@@ -59,13 +59,13 @@ export function JourneySection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-14"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
-            <GitBranch className="w-3.5 h-3.5" /> Growth & Milestones
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+            <GitBranch className="w-3.5 h-3.5" /> 05 — Growth & Milestones
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            My developer <span className="text-accent">timeline</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
+            My developer <span className="text-[#A3432F]">timeline</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#716B61] leading-relaxed">
             The path of continuous learning, certifications, and project engineering.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ export function JourneySection() {
         {/* Timeline Body */}
         <div className="relative">
           {/* Vertical line: Left-aligned on mobile, center-aligned on md screens */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#D5CCBC] md:-translate-x-1/2" />
 
           <div className="space-y-8">
             {timeline.map((item, i) => {
@@ -93,8 +93,8 @@ export function JourneySection() {
                 >
                   {/* Timeline Dot Badge */}
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 top-0 md:top-auto">
-                    <div className={`w-8 h-8 rounded-full grid place-items-center shadow-subtle ring-4 ring-[#0C0F0D] ${
-                      isLatest ? "bg-accent text-[#0C0F0D] font-bold" : "bg-primary text-white"
+                    <div className={`w-8 h-8 rounded-full grid place-items-center shadow-subtle ring-4 ring-[#F2EDE3] ${
+                      isLatest ? "bg-[#D6A756] text-[#181715] font-bold" : "bg-[#A3432F] text-white"
                     }`}>
                       <Icon className="w-3.5 h-3.5" />
                     </div>
@@ -102,11 +102,11 @@ export function JourneySection() {
 
                   {/* Card Container */}
                   <div className="pl-12 md:pl-0 md:w-1/2 md:px-8 w-full">
-                    <div className="craft-card p-5 space-y-1.5 bg-card border border-border">
-                      <div className="text-[11px] font-mono font-bold text-accent">{item.year}</div>
-                      <h3 className="font-bold text-base text-foreground">{item.title}</h3>
-                      <div className="text-xs text-muted-foreground font-mono">{item.place}</div>
-                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed font-sans">
+                    <div className="craft-card p-5 space-y-1.5 bg-[#F8F4EC] border border-[#D5CCBC] rounded-md">
+                      <div className="text-[11px] font-mono font-bold text-[#A3432F]">{item.year}</div>
+                      <h3 className="font-bold text-base text-[#181715]">{item.title}</h3>
+                      <div className="text-xs text-[#716B61] font-mono">{item.place}</div>
+                      <p className="mt-2 text-xs text-[#716B61] leading-relaxed font-sans">
                         {item.text}
                       </p>
                     </div>

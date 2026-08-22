@@ -60,7 +60,7 @@ export function Navbar() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0C0F0D]/95 border-b border-border shadow-subtle py-3"
+          ? "bg-[#F2EDE3]/95 border-b border-[#D5CCBC] shadow-subtle py-3"
           : "bg-transparent py-4"
       }`}
     >
@@ -72,16 +72,16 @@ export function Navbar() {
           onClick={(e) => handleNavClick(e, "#home")}
           className="flex items-center gap-2.5 group font-bold text-base sm:text-lg tracking-tight"
         >
-          <span className="w-8 h-8 rounded-lg bg-primary grid place-items-center text-white font-mono text-xs font-bold transition-transform group-hover:scale-105">
+          <span className="w-8 h-8 rounded bg-[#181715] grid place-items-center text-[#F2EDE3] font-mono text-xs font-bold transition-transform group-hover:scale-105">
             SK
           </span>
-          <span className="text-foreground group-hover:text-accent transition-colors">
-            Shiva <span className="text-accent font-serif italic text-sm font-semibold">Kasaudhan</span>
+          <span className="text-[#181715] group-hover:text-[#A3432F] transition-colors">
+            Shiva <span className="text-[#A3432F] font-serif italic text-sm font-semibold">Kasaudhan</span>
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-1 bg-card border border-border rounded-full px-3 py-1 shadow-subtle">
+        <ul className="hidden md:flex items-center gap-1 bg-[#F8F4EC] border border-[#D5CCBC] rounded-full px-3 py-1 shadow-subtle">
           {links.map((l) => {
             const id = l.href.slice(1);
             const isActive = active === id;
@@ -93,14 +93,14 @@ export function Navbar() {
                   className={`relative px-3.5 py-1.5 text-xs font-medium transition-colors rounded-full ${
                     isActive
                       ? "text-white font-semibold"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-[#716B61] hover:text-[#181715]"
                   }`}
                 >
                   {l.label}
                   {isActive && (
                     <motion.span
                       layoutId="navactive_studio"
-                      className="absolute inset-0 -z-10 rounded-full bg-primary"
+                      className="absolute inset-0 -z-10 rounded-full bg-[#A3432F]"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}
@@ -117,15 +117,15 @@ export function Navbar() {
             size="icon"
             onClick={toggle}
             aria-label="Toggle theme"
-            className="rounded-full hover:bg-muted text-foreground w-9 h-9"
+            className="rounded-full hover:bg-[#F8F4EC] text-[#181715] w-9 h-9"
           >
-            {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-stone-300" />}
+            {theme === "dark" ? <Sun className="w-4 h-4 text-[#D6A756]" /> : <Moon className="w-4 h-4 text-[#716B61]" />}
           </Button>
 
           <Button
             asChild
             size="sm"
-            className="hidden sm:inline-flex bg-primary hover:bg-primary-dark text-white rounded-lg shadow-subtle border-0 text-xs font-semibold px-4 transition-colors"
+            className="hidden sm:inline-flex bg-[#A3432F] hover:bg-[#863525] text-white rounded-md shadow-subtle border-0 text-xs font-semibold px-4 transition-colors"
           >
             <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")} className="flex items-center gap-1">
               Hire Me <ArrowUpRight className="w-3.5 h-3.5" />
@@ -136,11 +136,11 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden rounded-full w-9 h-9 hover:bg-muted"
+            className="md:hidden rounded-md w-9 h-9 hover:bg-[#F8F4EC]"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
-            {open ? <X className="w-5 h-5 text-foreground" /> : <Menu className="w-5 h-5 text-foreground" />}
+            {open ? <X className="w-5 h-5 text-[#181715]" /> : <Menu className="w-5 h-5 text-[#181715]" />}
           </Button>
         </div>
       </nav>
@@ -153,7 +153,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden border-b border-border bg-[#0C0F0D] px-4 py-4 shadow-md"
+            className="md:hidden overflow-hidden border-b border-[#D5CCBC] bg-[#F2EDE3] px-4 py-4 shadow-md"
           >
             <ul className="flex flex-col gap-1 text-sm">
               {links.map((l) => (
@@ -161,10 +161,10 @@ export function Navbar() {
                   <a
                     href={l.href}
                     onClick={(e) => handleNavClick(e, l.href)}
-                    className={`block px-4 py-2.5 rounded-lg font-medium transition-colors ${
+                    className={`block px-4 py-2.5 rounded-md font-medium transition-colors ${
                       active === l.href.slice(1)
-                        ? "bg-primary text-white font-bold"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        ? "bg-[#A3432F] text-white font-bold"
+                        : "text-[#716B61] hover:text-[#181715] hover:bg-[#F8F4EC]"
                     }`}
                   >
                     {l.label}
@@ -172,12 +172,12 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
-              <span className="text-xs font-mono text-muted-foreground">📍 Gurgaon, Haryana</span>
+            <div className="mt-4 pt-3 border-t border-[#D5CCBC] flex items-center justify-between">
+              <span className="text-xs font-mono text-[#716B61]">📍 Gurgaon, Haryana</span>
               <Button
                 asChild
                 size="sm"
-                className="bg-primary hover:bg-primary-dark text-white rounded-lg text-xs font-semibold px-4"
+                className="bg-[#A3432F] hover:bg-[#863525] text-white rounded-md text-xs font-semibold px-4"
               >
                 <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                   Contact Me

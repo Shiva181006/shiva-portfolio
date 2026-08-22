@@ -93,7 +93,7 @@ function AboutAvatar() {
 
   return (
     <div className="relative shrink-0">
-      <div className="w-11 h-11 rounded-lg overflow-hidden border border-border bg-card shadow-subtle grid place-items-center">
+      <div className="w-11 h-11 rounded-md overflow-hidden border border-[#D5CCBC] bg-[#F8F4EC] shadow-subtle grid place-items-center">
         {!hasError ? (
           <img
             src={imgSrc}
@@ -102,7 +102,7 @@ function AboutAvatar() {
             onError={handleErr}
           />
         ) : (
-          <div className="w-full h-full bg-primary grid place-items-center text-white font-bold text-sm">
+          <div className="w-full h-full bg-[#A3432F] grid place-items-center text-white font-bold text-sm">
             SK
           </div>
         )}
@@ -113,7 +113,7 @@ function AboutAvatar() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
+    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F2EDE3] overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Main About Block */}
@@ -126,13 +126,13 @@ export function AboutSection() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
-              <Heart className="w-3.5 h-3.5" /> About Me & Background
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+              <Heart className="w-3.5 h-3.5" /> 01 — About Me & Background
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-              Building software with <span className="text-accent whitespace-nowrap">clarity & craft</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
+              Building software with <span className="text-[#A3432F] whitespace-nowrap">clarity & craft</span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-[#716B61] leading-relaxed">
               I'm an MCA graduate and frontend-focused developer who cares about clean code, thoughtful user experiences, and building practical web applications with React.js, JavaScript, Java, and AI APIs.
             </p>
           </motion.div>
@@ -146,12 +146,12 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="craft-card p-5 text-center bg-card border border-border"
+                className="craft-card p-5 text-center bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
               >
-                <div className="text-2xl sm:text-3xl font-extrabold text-accent font-mono">
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#A3432F] font-mono">
                   <Counter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
                 </div>
-                <div className="mt-1.5 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-mono font-medium">
+                <div className="mt-1.5 text-[10px] sm:text-xs text-[#716B61] uppercase tracking-wider font-mono font-medium">
                   {stat.label}
                 </div>
               </motion.div>
@@ -170,15 +170,15 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="craft-card p-6 bg-card border border-border"
+                  className="craft-card p-6 bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 grid place-items-center rounded-lg bg-[#0C0F0D] border border-border text-accent shrink-0">
+                    <div className="w-10 h-10 grid place-items-center rounded-md bg-[#F2EDE3] border border-[#D5CCBC] text-[#A3432F] shrink-0">
                       <s.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-base text-foreground">{s.title}</h3>
-                      <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">{s.text}</p>
+                      <h3 className="font-bold text-base text-[#181715]">{s.title}</h3>
+                      <p className="mt-1.5 text-xs sm:text-sm text-[#716B61] leading-relaxed font-sans">{s.text}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -191,25 +191,25 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-5 craft-card p-7 space-y-6 bg-card border border-border"
+              className="lg:col-span-5 craft-card p-7 space-y-6 bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
             >
-              <div className="flex items-center gap-2 text-xs font-mono text-accent font-bold">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold">
                 <Compass className="w-4 h-4" /> Professional Philosophy
               </div>
               
-              <blockquote className="text-sm sm:text-base text-foreground font-serif italic leading-relaxed">
+              <blockquote className="text-sm sm:text-base text-[#181715] font-serif italic leading-relaxed">
                 "Great web products are created when intentional UI design, structured code, and performance serve real user goals."
               </blockquote>
 
-              <div className="pt-4 border-t border-border flex items-center justify-between gap-3">
+              <div className="pt-4 border-t border-[#D5CCBC] flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <AboutAvatar />
                   <div>
-                    <div className="font-bold text-sm text-foreground">Shiva Kasaudhan</div>
-                    <div className="text-xs text-muted-foreground font-mono">Frontend Developer • MCA Graduate</div>
+                    <div className="font-bold text-sm text-[#181715]">Shiva Kasaudhan</div>
+                    <div className="text-xs text-[#716B61] font-mono">Frontend Developer • MCA Graduate</div>
                   </div>
                 </div>
-                <div className="font-serif italic text-accent text-lg sm:text-xl font-bold shrink-0">
+                <div className="font-serif italic text-[#A3432F] text-lg sm:text-xl font-bold shrink-0">
                   Shiva K.
                 </div>
               </div>
@@ -227,11 +227,11 @@ export function AboutSection() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-2">
               <Award className="w-3.5 h-3.5" /> Key Honors & Recognitions
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Verified <span className="text-accent">Academic Achievements</span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#181715]">
+              Verified <span className="text-[#A3432F]">Academic Achievements</span>
             </h3>
           </motion.div>
 
@@ -243,17 +243,17 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="craft-card p-5 space-y-2 flex flex-col justify-between bg-card border border-border"
+                className="craft-card p-5 space-y-2 flex flex-col justify-between bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-accent border border-emerald-800/40">
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#F2EDE3] text-[#A3432F] border border-[#D5CCBC]">
                       {ach.tag}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    <CheckCircle2 className="w-4 h-4 text-[#3F6B4A]" />
                   </div>
-                  <h4 className="font-bold text-base text-foreground leading-snug">{ach.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed font-sans">{ach.desc}</p>
+                  <h4 className="font-bold text-base text-[#181715] leading-snug">{ach.title}</h4>
+                  <p className="text-xs text-[#716B61] leading-relaxed font-sans">{ach.desc}</p>
                 </div>
               </motion.div>
             ))}
