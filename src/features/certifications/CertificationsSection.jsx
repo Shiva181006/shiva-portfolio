@@ -60,7 +60,7 @@ const certs = [
 
 export function CertificationsSection() {
   return (
-    <section id="certifications" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+    <section id="certifications" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-background">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -74,8 +74,8 @@ export function CertificationsSection() {
           <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
             <Award className="w-3.5 h-3.5" /> Verified Certifications
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Credentials & <span className="text-gradient">continuous learning</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+            Credentials & <span className="text-primary">continuous learning</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Industry & academic certifications verifying software, programming, and cloud skills.

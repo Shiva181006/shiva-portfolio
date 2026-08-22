@@ -60,7 +60,7 @@ const groups = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -74,8 +74,8 @@ export function SkillsSection() {
           <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
             <Code className="w-3.5 h-3.5" /> Technical Skills & Tools
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Tools I use to <span className="text-gradient whitespace-nowrap">build & ship</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+            Tools I use to <span className="text-primary whitespace-nowrap">build & ship</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Practical competencies tested and applied across real project deployments.
@@ -95,7 +95,7 @@ export function SkillsSection() {
             >
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0">
                     <g.icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-base text-foreground">{g.title}</h3>

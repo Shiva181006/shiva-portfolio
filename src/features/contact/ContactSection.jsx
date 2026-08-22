@@ -65,7 +65,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
@@ -79,8 +79,8 @@ export function ContactSection() {
           <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
             <Mail className="w-3.5 h-3.5" /> Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Let's <span className="text-gradient whitespace-nowrap">connect & collaborate</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+            Let's <span className="text-primary whitespace-nowrap">connect & collaborate</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Interested in hiring me for frontend development or software developer roles? Drop a message below.
@@ -113,7 +113,7 @@ export function ContactSection() {
                 href={item.href}
                 className="craft-card p-4.5 flex items-center gap-4 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0 group-hover:scale-105 transition-transform">
                   <item.icon className="w-4.5 h-4.5" />
                 </div>
                 <div className="overflow-hidden">
@@ -129,7 +129,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex-1 h-11 grid place-items-center rounded-xl border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Github className="w-4 h-4" /> GitHub</span>
               </a>
@@ -138,7 +138,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex-1 h-11 grid place-items-center rounded-xl border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> LinkedIn</span>
               </a>
@@ -164,7 +164,7 @@ export function ContactSection() {
                   name="name"
                   required
                   placeholder="e.g. Rahul Sharma"
-                  className="bg-background border-border h-11 text-xs rounded-xl focus-visible:ring-primary"
+                  className="bg-card border-border h-11 text-xs rounded-lg focus-visible:ring-primary"
                 />
               </div>
               <div>
@@ -176,7 +176,7 @@ export function ContactSection() {
                   type="email"
                   required
                   placeholder="you@company.com"
-                  className="bg-background border-border h-11 text-xs rounded-xl focus-visible:ring-primary"
+                  className="bg-card border-border h-11 text-xs rounded-lg focus-visible:ring-primary"
                 />
               </div>
             </div>
@@ -190,7 +190,7 @@ export function ContactSection() {
                 required
                 rows={4}
                 placeholder="Share your opportunity or project details..."
-                className="bg-background border-border resize-none text-xs rounded-xl focus-visible:ring-primary"
+                className="bg-card border-border resize-none text-xs rounded-lg focus-visible:ring-primary"
               />
             </div>
 
@@ -198,7 +198,7 @@ export function ContactSection() {
               type="submit"
               disabled={sending}
               size="lg"
-              className="w-full bg-gradient-primary text-primary-foreground hover:opacity-95 shadow-glow border-0 rounded-xl font-semibold text-xs py-3"
+              className="w-full bg-primary hover:bg-primary-dark text-white rounded-lg font-semibold text-xs py-3 border-0 transition-colors shadow-subtle"
             >
               {sending ? "Sending..." : (
                 <span className="flex items-center justify-center gap-2">

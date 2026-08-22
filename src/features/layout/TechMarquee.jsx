@@ -30,7 +30,7 @@ function Row({ reverse = false, speed = 35 }) {
 
 export function TechMarquee() {
   return (
-    <section className="relative py-8 border-y border-border bg-card/30 select-none overflow-hidden">
+    <section className="relative py-8 border-y border-border bg-background select-none overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-3">
           <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-widest">

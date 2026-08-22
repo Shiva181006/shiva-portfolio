@@ -60,7 +60,7 @@ export function Navbar() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-background/85 border-b border-border shadow-sm py-3"
+          ? "bg-background/95 border-b border-border shadow-subtle py-3"
           : "bg-transparent py-4"
       }`}
     >
@@ -72,16 +72,16 @@ export function Navbar() {
           onClick={(e) => handleNavClick(e, "#home")}
           className="flex items-center gap-2.5 group font-bold text-base sm:text-lg tracking-tight"
         >
-          <span className="w-8 h-8 rounded-lg bg-gradient-primary grid place-items-center text-primary-foreground font-mono text-xs font-extrabold shadow-glow group-hover:scale-105 transition-transform">
+          <span className="w-8 h-8 rounded-lg bg-primary grid place-items-center text-white font-mono text-xs font-bold transition-transform group-hover:scale-105">
             SK
           </span>
           <span className="text-foreground group-hover:text-primary transition-colors">
-            Shiva <span className="text-primary font-serif italic text-sm">Kasaudhan</span>
+            Shiva <span className="text-primary font-serif italic text-sm font-semibold">Kasaudhan</span>
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-1 bg-card/60 border border-border/80 rounded-full px-3 py-1 backdrop-blur-md">
+        <ul className="hidden md:flex items-center gap-1 bg-card border border-border rounded-full px-3 py-1 shadow-subtle">
           {links.map((l) => {
             const id = l.href.slice(1);
             const isActive = active === id;
@@ -92,7 +92,7 @@ export function Navbar() {
                   onClick={(e) => handleNavClick(e, l.href)}
                   className={`relative px-3 py-1.5 text-xs font-medium transition-colors rounded-full ${
                     isActive
-                      ? "text-primary-foreground font-semibold"
+                      ? "text-white font-semibold"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -117,15 +117,15 @@ export function Navbar() {
             size="icon"
             onClick={toggle}
             aria-label="Toggle theme"
-            className="rounded-full hover:bg-accent text-foreground w-9 h-9"
+            className="rounded-full hover:bg-muted text-foreground w-9 h-9"
           >
-            {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
+            {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-stone-700" />}
           </Button>
 
           <Button
             asChild
             size="sm"
-            className="hidden sm:inline-flex bg-gradient-primary text-primary-foreground hover:opacity-90 rounded-full shadow-glow border-0 text-xs font-semibold px-4"
+            className="hidden sm:inline-flex bg-primary hover:bg-primary-dark text-white rounded-lg shadow-subtle border-0 text-xs font-semibold px-4 transition-colors"
           >
             <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")} className="flex items-center gap-1">
               Hire Me <ArrowUpRight className="w-3.5 h-3.5" />
@@ -136,7 +136,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden rounded-full w-9 h-9 hover:bg-accent"
+            className="md:hidden rounded-full w-9 h-9 hover:bg-muted"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -153,7 +153,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden border-b border-border bg-background/95 backdrop-blur-xl px-4 py-4 shadow-xl"
+            className="md:hidden overflow-hidden border-b border-border bg-background px-4 py-4 shadow-md"
           >
             <ul className="flex flex-col gap-1 text-sm">
               {links.map((l) => (
@@ -161,10 +161,10 @@ export function Navbar() {
                   <a
                     href={l.href}
                     onClick={(e) => handleNavClick(e, l.href)}
-                    className={`block px-4 py-2.5 rounded-xl font-medium transition-colors ${
+                    className={`block px-4 py-2.5 rounded-lg font-medium transition-colors ${
                       active === l.href.slice(1)
                         ? "bg-primary/10 text-primary font-bold border border-primary/20"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent/60"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
                     {l.label}
@@ -177,7 +177,7 @@ export function Navbar() {
               <Button
                 asChild
                 size="sm"
-                className="bg-gradient-primary text-primary-foreground rounded-full text-xs font-semibold px-4"
+                className="bg-primary hover:bg-primary-dark text-white rounded-lg text-xs font-semibold px-4"
               >
                 <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                   Contact Me

@@ -93,7 +93,7 @@ function AboutAvatar() {
 
   return (
     <div className="relative shrink-0">
-      <div className="w-11 h-11 rounded-xl overflow-hidden border border-primary/40 bg-card shadow-sm grid place-items-center">
+      <div className="w-11 h-11 rounded-lg overflow-hidden border border-primary/30 bg-card shadow-subtle grid place-items-center">
         {!hasError ? (
           <img
             src={imgSrc}
@@ -102,7 +102,7 @@ function AboutAvatar() {
             onError={handleErr}
           />
         ) : (
-          <div className="w-full h-full bg-gradient-primary grid place-items-center text-primary-foreground font-extrabold text-sm">
+          <div className="w-full h-full bg-primary grid place-items-center text-white font-bold text-sm">
             SK
           </div>
         )}
@@ -113,7 +113,7 @@ function AboutAvatar() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Main About Block */}
@@ -129,8 +129,8 @@ export function AboutSection() {
             <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
               <Heart className="w-3.5 h-3.5" /> About Me & Background
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              Building software with <span className="text-gradient whitespace-nowrap">clarity & craft</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+              Building software with <span className="text-primary whitespace-nowrap">clarity & craft</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               I'm an MCA graduate and frontend-focused developer who cares about clean code, thoughtful user experiences, and building practical web applications with React.js, JavaScript, Java, and AI APIs.
@@ -173,7 +173,7 @@ export function AboutSection() {
                   className="craft-card p-6"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 grid place-items-center rounded-xl bg-primary/10 border border-primary/20 text-primary shrink-0">
+                    <div className="w-10 h-10 grid place-items-center rounded-lg bg-primary/10 border border-primary/20 text-primary shrink-0">
                       <s.icon className="w-5 h-5" />
                     </div>
                     <div>
@@ -191,7 +191,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-5 craft-card p-7 space-y-6 bg-gradient-to-br from-card to-background"
+              className="lg:col-span-5 craft-card p-7 space-y-6"
             >
               <div className="flex items-center gap-2 text-xs font-mono text-primary font-bold">
                 <Compass className="w-4 h-4" /> Professional Philosophy
@@ -230,8 +230,8 @@ export function AboutSection() {
             <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-2">
               <Award className="w-3.5 h-3.5" /> Key Honors & Recognitions
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              Verified <span className="text-gradient">Academic Achievements</span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+              Verified <span className="text-primary">Academic Achievements</span>
             </h3>
           </motion.div>
 
@@ -250,7 +250,7 @@ export function AboutSection() {
                     <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                       {ach.tag}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   </div>
                   <h4 className="font-bold text-base text-foreground leading-snug">{ach.title}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed font-sans">{ach.desc}</p>

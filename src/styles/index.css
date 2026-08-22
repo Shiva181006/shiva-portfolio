@@ -3,62 +3,69 @@
 @tailwind utilities;
 
 :root {
-  --radius: 0.85rem;
-  /* Apple Pro Light Palette - Crisp Pearl Titanium & Sapphire Blue */
-  --background: oklch(0.98 0.005 240);       /* #f8fafc Crisp Titanium Pearl */
-  --foreground: oklch(0.18 0.04 250);         /* #0f172a Deep Obsidian Slate */
-  --card: oklch(0.96 0.01 245);               /* #f1f5f9 Translucent Studio Card */
-  --card-foreground: oklch(0.18 0.04 250);
+  --radius: 0.625rem; /* 10px rounded corners */
+  
+  /* Emerald + Stone Light Palette */
+  --background: #FAFAF9;       /* Stone 50 */
+  --foreground: #292524;       /* Stone 800 */
+  --card: #FFFFFF;             /* Pure White Surface */
+  --card-foreground: #292524;
 
-  /* Electric Sapphire Accent */
-  --primary: oklch(0.55 0.22 250);            /* #2563eb Vibrant Royal Sapphire */
-  --primary-foreground: oklch(0.99 0.005 240);
-  --primary-glow: oklch(0.65 0.22 220);        /* #06b6d4 Electric Cyan */
+  --primary: #166534;          /* Emerald 800 */
+  --primary-dark: #14532D;     /* Emerald 900 */
+  --primary-foreground: #FFFFFF;
 
-  --secondary: oklch(0.93 0.015 240);
-  --secondary-foreground: oklch(0.2 0.04 250);
-  --muted: oklch(0.93 0.01 240);
-  --muted-foreground: oklch(0.48 0.03 245);  /* #64748b Crisp Slate Muted */
-  --accent: oklch(0.92 0.025 240);
-  --accent-foreground: oklch(0.18 0.04 250);
-  --border: oklch(0.88 0.02 240);            /* Hairline Titanium Border */
-  --input: oklch(0.9 0.02 240);
-  --ring: oklch(0.55 0.22 250);
+  --secondary: #F5F5F4;        /* Stone 100 */
+  --secondary-foreground: #292524;
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.55 0.22 250), oklch(0.65 0.22 220));
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.55 0.22 250 / 0.12), transparent 70%);
-  --gradient-glow: radial-gradient(circle at center, oklch(0.65 0.22 220 / 0.15), transparent 70%);
-  --shadow-glow: 0 10px 30px -8px rgba(37, 99, 235, 0.35);
-  --shadow-elegant: 0 16px 40px -12px rgba(15, 23, 42, 0.08);
+  --muted: #F5F5F4;
+  --muted-foreground: #78716C;  /* Stone 500 */
+
+  --accent: #84CC16;         /* Lime 500 */
+  --accent-foreground: #1A2E05;
+
+  --border: #E7E5E4;           /* Stone 200 */
+  --input: #E7E5E4;
+  --ring: #166534;
+
+  --success: #16A34A;
+  --warning: #CA8A04;
+  --destructive: #DC2626;
+
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
 }
 
 .dark {
-  /* Apple Pro Dark Palette - Midnight Obsidian Void & Neon Cyan Sapphire */
-  --background: oklch(0.10 0.03 255);        /* #070a13 Midnight Obsidian Void */
-  --foreground: oklch(0.96 0.008 240);       /* #f1f5f9 Crisp Slate Parchment */
-  --card: oklch(0.15 0.03 255);             /* #0f172a Apple Pro Obsidian Card */
-  --card-foreground: oklch(0.96 0.008 240);
+  /* Emerald + Stone Dark Palette */
+  --background: #1C1917;       /* Stone 900 */
+  --foreground: #F5F5F4;       /* Stone 100 */
+  --card: #262626;             /* Stone 800 */
+  --card-foreground: #F5F5F4;
 
-  /* Electric Sapphire & Neon Cyan Accent */
-  --primary: oklch(0.62 0.22 250);           /* #3b82f6 Electric Sapphire */
-  --primary-foreground: oklch(0.99 0.005 240);
-  --primary-glow: oklch(0.72 0.20 210);       /* #06b6d4 Neon Cyan Glow */
+  --primary: #15803D;          /* Emerald 700 */
+  --primary-dark: #166534;     /* Emerald 800 */
+  --primary-foreground: #FFFFFF;
 
-  --secondary: oklch(0.20 0.03 255);
-  --secondary-foreground: oklch(0.96 0.008 240);
-  --muted: oklch(0.19 0.025 255);
-  --muted-foreground: oklch(0.68 0.03 245);  /* #94a3b8 */
-  --accent: oklch(0.22 0.035 250);
-  --accent-foreground: oklch(0.96 0.008 240);
-  --border: oklch(0.28 0.04 250 / 0.6);     /* Hairline Electric Sapphire Border */
-  --input: oklch(0.28 0.04 250 / 0.7);
-  --ring: oklch(0.62 0.22 250);
+  --secondary: #292524;
+  --secondary-foreground: #F5F5F4;
 
-  --gradient-primary: linear-gradient(135deg, #3b82f6, #06b6d4);
-  --gradient-hero: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.18), transparent 70%);
-  --gradient-glow: radial-gradient(circle at center, rgba(6, 182, 212, 0.2), transparent 70%);
-  --shadow-glow: 0 10px 35px -8px rgba(59, 130, 246, 0.4);
-  --shadow-elegant: 0 20px 50px -12px rgba(0, 0, 0, 0.7);
+  --muted: #292524;
+  --muted-foreground: #A8A29E;
+
+  --accent: #84CC16;
+  --accent-foreground: #1A2E05;
+
+  --border: #44403C;           /* Stone 700 */
+  --input: #44403C;
+  --ring: #15803D;
+
+  --success: #16A34A;
+  --warning: #CA8A04;
+  --destructive: #DC2626;
+
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
 }
 
 @layer base {
@@ -83,38 +90,28 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--primary);
   }
-  .bg-gradient-primary { background: var(--gradient-primary); }
-  .bg-gradient-hero { background: var(--gradient-hero); }
-  .bg-gradient-glow { background: var(--gradient-glow); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .bg-gradient-primary {
+    background-color: var(--primary);
+  }
   
-  /* Precision Apple Pro grid background */
-  .studio-grid {
-    background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-
   .craft-card {
-    background: var(--card);
+    background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-subtle);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .craft-card:hover {
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 12px 36px -10px rgba(59, 130, 246, 0.25);
+    border-color: #D6D3D1;
+    box-shadow: var(--shadow-card);
   }
 }
 
@@ -130,7 +127,7 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.3);
+  background: #D6D3D1;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {

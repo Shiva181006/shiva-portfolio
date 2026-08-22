@@ -48,7 +48,7 @@ const timeline = [
 
 export function JourneySection() {
   return (
-    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
@@ -62,8 +62,8 @@ export function JourneySection() {
           <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
             <GitBranch className="w-3.5 h-3.5" /> Growth & Milestones
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            My developer <span className="text-gradient">timeline</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+            My developer <span className="text-primary">timeline</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             The path of continuous learning, certifications, and project engineering.
@@ -92,7 +92,7 @@ export function JourneySection() {
                 >
                   {/* Timeline Dot Badge */}
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 top-0 md:top-auto">
-                    <div className="w-8 h-8 rounded-full bg-gradient-primary grid place-items-center shadow-glow ring-4 ring-background text-primary-foreground">
+                    <div className="w-8 h-8 rounded-full bg-primary grid place-items-center shadow-subtle ring-4 ring-background text-white">
                       <Icon className="w-3.5 h-3.5" />
                     </div>
                   </div>

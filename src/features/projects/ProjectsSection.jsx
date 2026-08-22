@@ -229,8 +229,8 @@ export function ProjectsSection() {
           <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
             <FolderGit2 className="w-3.5 h-3.5" /> Selected Portfolio Projects
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Crafted with <span className="text-gradient whitespace-nowrap">purpose & precision</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+            Crafted with <span className="text-primary whitespace-nowrap">purpose & precision</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Real applications built to solve genuine technical and user challenges.
@@ -243,10 +243,10 @@ export function ProjectsSection() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full font-medium transition-all ${
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 activeCategory === cat
-                  ? "bg-primary text-primary-foreground font-bold shadow-sm"
-                  : "bg-card hover:bg-accent text-muted-foreground hover:text-foreground border border-border"
+                  ? "bg-primary text-white font-semibold shadow-subtle"
+                  : "bg-card hover:bg-muted text-muted-foreground hover:text-foreground border border-border"
               }`}
             >
               {cat}
@@ -274,7 +274,7 @@ export function ProjectsSection() {
                     {p.isFeatured ? (
                       <HireLensInteractiveWidget />
                     ) : (
-                      <div className="rounded-2xl border border-border bg-background/80 p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
+                      <div className="rounded-xl border border-border bg-background p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-mono text-muted-foreground">{p.tag}</span>
                           <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
@@ -282,7 +282,7 @@ export function ProjectsSection() {
                           </span>
                         </div>
                         <div className="my-auto text-center">
-                          <div className="text-5xl font-mono font-extrabold text-primary/30 mb-2">0{i + 1}</div>
+                          <div className="text-5xl font-mono font-extrabold text-primary/20 mb-2">0{i + 1}</div>
                           <h4 className="text-xl font-bold text-foreground">{p.title}</h4>
                         </div>
                         <div className="text-[11px] font-mono text-muted-foreground">
@@ -308,7 +308,7 @@ export function ProjectsSection() {
                           rel="noopener noreferrer"
                           aria-label="View Source Code on GitHub"
                           title="View Source Code on GitHub"
-                          className="w-9 h-9 grid place-items-center rounded-full border border-border bg-card hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
+                          className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
                         >
                           <Github className="w-4 h-4" />
                         </a>
@@ -319,7 +319,7 @@ export function ProjectsSection() {
                             rel="noopener noreferrer"
                             aria-label="Live Demo"
                             title="Live Demo"
-                            className="w-9 h-9 grid place-items-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 transition-opacity"
+                            className="w-9 h-9 grid place-items-center rounded-lg bg-primary hover:bg-primary-dark text-white transition-colors"
                           >
                             <ArrowUpRight className="w-4 h-4" />
                           </a>
@@ -329,15 +329,15 @@ export function ProjectsSection() {
 
                     {/* Problem / Solution / Impact Triad */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-sans">
-                      <div className="p-3 rounded-xl bg-background/50 border border-border/70 space-y-1">
+                      <div className="p-3 rounded-lg bg-background border border-border space-y-1">
                         <div className="font-mono text-[10px] uppercase font-bold text-primary">Problem</div>
                         <p className="text-muted-foreground leading-relaxed text-[11px]">{p.problem}</p>
                       </div>
-                      <div className="p-3 rounded-xl bg-background/50 border border-border/70 space-y-1">
+                      <div className="p-3 rounded-lg bg-background border border-border space-y-1">
                         <div className="font-mono text-[10px] uppercase font-bold text-primary">Solution</div>
                         <p className="text-muted-foreground leading-relaxed text-[11px]">{p.solution}</p>
                       </div>
-                      <div className="p-3 rounded-xl bg-background/50 border border-border/70 space-y-1">
+                      <div className="p-3 rounded-lg bg-background border border-border space-y-1">
                         <div className="font-mono text-[10px] uppercase font-bold text-primary">Impact</div>
                         <p className="text-muted-foreground leading-relaxed text-[11px]">{p.impact}</p>
                       </div>
@@ -348,7 +348,7 @@ export function ProjectsSection() {
                       {p.tech.map((t) => (
                         <span
                           key={t}
-                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-border bg-background/80 text-muted-foreground"
+                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-border bg-background text-muted-foreground"
                         >
                           <Sparkle className="w-2.5 h-2.5 text-primary" /> {t}
                         </span>
