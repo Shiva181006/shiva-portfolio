@@ -93,7 +93,7 @@ function AboutAvatar() {
 
   return (
     <div className="relative shrink-0">
-      <div className="w-11 h-11 rounded-lg overflow-hidden border border-primary/30 bg-card shadow-subtle grid place-items-center">
+      <div className="w-11 h-11 rounded-lg overflow-hidden border border-border bg-card shadow-subtle grid place-items-center">
         {!hasError ? (
           <img
             src={imgSrc}
@@ -113,10 +113,7 @@ function AboutAvatar() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-dots overflow-hidden">
-      {/* Soft ambient background wash */}
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
+    <section id="about" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Main About Block */}
@@ -129,11 +126,11 @@ export function AboutSection() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
               <Heart className="w-3.5 h-3.5" /> About Me & Background
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-              Building software with <span className="text-primary whitespace-nowrap">clarity & craft</span>
+              Building software with <span className="text-accent whitespace-nowrap">clarity & craft</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               I'm an MCA graduate and frontend-focused developer who cares about clean code, thoughtful user experiences, and building practical web applications with React.js, JavaScript, Java, and AI APIs.
@@ -149,9 +146,9 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="craft-card p-5 text-center"
+                className="craft-card p-5 text-center bg-card border border-border"
               >
-                <div className="text-2xl sm:text-3xl font-extrabold text-primary font-mono">
+                <div className="text-2xl sm:text-3xl font-extrabold text-accent font-mono">
                   <Counter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
                 </div>
                 <div className="mt-1.5 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-mono font-medium">
@@ -173,10 +170,10 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="craft-card p-6"
+                  className="craft-card p-6 bg-card border border-border"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 grid place-items-center rounded-lg bg-primary/10 border border-primary/20 text-primary shrink-0">
+                    <div className="w-10 h-10 grid place-items-center rounded-lg bg-[#0C0F0D] border border-border text-accent shrink-0">
                       <s.icon className="w-5 h-5" />
                     </div>
                     <div>
@@ -194,9 +191,9 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-5 craft-card p-7 space-y-6"
+              className="lg:col-span-5 craft-card p-7 space-y-6 bg-card border border-border"
             >
-              <div className="flex items-center gap-2 text-xs font-mono text-primary font-bold">
+              <div className="flex items-center gap-2 text-xs font-mono text-accent font-bold">
                 <Compass className="w-4 h-4" /> Professional Philosophy
               </div>
               
@@ -212,7 +209,7 @@ export function AboutSection() {
                     <div className="text-xs text-muted-foreground font-mono">Frontend Developer • MCA Graduate</div>
                   </div>
                 </div>
-                <div className="font-serif italic text-primary text-lg sm:text-xl font-bold shrink-0">
+                <div className="font-serif italic text-accent text-lg sm:text-xl font-bold shrink-0">
                   Shiva K.
                 </div>
               </div>
@@ -230,11 +227,11 @@ export function AboutSection() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-2">
               <Award className="w-3.5 h-3.5" /> Key Honors & Recognitions
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Verified <span className="text-primary">Academic Achievements</span>
+              Verified <span className="text-accent">Academic Achievements</span>
             </h3>
           </motion.div>
 
@@ -246,14 +243,14 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="craft-card p-5 space-y-2 flex flex-col justify-between"
+                className="craft-card p-5 space-y-2 flex flex-col justify-between bg-card border border-border"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-accent border border-emerald-800/40">
                       {ach.tag}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                   </div>
                   <h4 className="font-bold text-base text-foreground leading-snug">{ach.title}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed font-sans">{ach.desc}</p>

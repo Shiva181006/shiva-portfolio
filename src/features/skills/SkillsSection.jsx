@@ -60,10 +60,7 @@ const groups = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-dots overflow-hidden">
-      {/* Soft ambient background wash */}
-      <div className="absolute bottom-10 left-1/4 w-[400px] h-[300px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
+    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -74,11 +71,11 @@ export function SkillsSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
             <Code className="w-3.5 h-3.5" /> Technical Skills & Tools
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            Tools I use to <span className="text-primary whitespace-nowrap">build & ship</span>
+            Tools I use to <span className="text-accent whitespace-nowrap">build & ship</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Practical competencies tested and applied across real project deployments.
@@ -94,11 +91,11 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="craft-card p-6 flex flex-col justify-between"
+              className="craft-card p-6 flex flex-col justify-between bg-card border border-border"
             >
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#0C0F0D] border border-border grid place-items-center text-accent shrink-0">
                     <g.icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-base text-foreground">{g.title}</h3>
@@ -109,9 +106,9 @@ export function SkillsSection() {
                     <li key={item.name} className="text-xs space-y-0.5">
                       <div className="flex items-center justify-between font-semibold text-foreground">
                         <span className="flex items-center gap-1.5">
-                          <Check className="w-3 h-3 text-primary" /> {item.name}
+                          <Check className="w-3 h-3 text-accent" /> {item.name}
                         </span>
-                        <span className="text-[9px] font-mono px-2 py-0.2 rounded bg-background border border-border text-muted-foreground">
+                        <span className="text-[9px] font-mono px-2 py-0.2 rounded bg-[#0C0F0D] border border-border text-muted-foreground">
                           {item.level}
                         </span>
                       </div>

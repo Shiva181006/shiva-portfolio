@@ -65,10 +65,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-dots bg-emerald-glow-top overflow-hidden">
-      {/* Soft ambient background wash */}
-      <div className="absolute top-1/2 right-10 w-[450px] h-[350px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
@@ -79,11 +76,11 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
             <Mail className="w-3.5 h-3.5" /> Get In Touch
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            Let's <span className="text-primary whitespace-nowrap">connect & collaborate</span>
+            Let's <span className="text-accent whitespace-nowrap">connect & collaborate</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Interested in hiring me for frontend development or software developer roles? Drop a message below.
@@ -114,9 +111,9 @@ export function ContactSection() {
               <a
                 key={item.label}
                 href={item.href}
-                className="craft-card p-4.5 flex items-center gap-4 group"
+                className="craft-card p-4.5 flex items-center gap-4 group bg-card border border-border"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 grid place-items-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-[#0C0F0D] border border-border grid place-items-center text-accent shrink-0 group-hover:scale-105 transition-transform">
                   <item.icon className="w-4.5 h-4.5" />
                 </div>
                 <div className="overflow-hidden">
@@ -132,7 +129,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-accent transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Github className="w-4 h-4" /> GitHub</span>
               </a>
@@ -141,7 +138,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-accent transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> LinkedIn</span>
               </a>
@@ -156,7 +153,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 craft-card p-6 sm:p-8 space-y-4 font-sans"
+            className="lg:col-span-3 craft-card p-6 sm:p-8 space-y-4 font-sans bg-card border border-border"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -167,7 +164,7 @@ export function ContactSection() {
                   name="name"
                   required
                   placeholder="e.g. Rahul Sharma"
-                  className="bg-card border-border h-11 text-xs rounded-lg focus-visible:ring-primary"
+                  className="bg-[#0C0F0D] border-border h-11 text-xs rounded-lg text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
                 />
               </div>
               <div>
@@ -179,7 +176,7 @@ export function ContactSection() {
                   type="email"
                   required
                   placeholder="you@company.com"
-                  className="bg-card border-border h-11 text-xs rounded-lg focus-visible:ring-primary"
+                  className="bg-[#0C0F0D] border-border h-11 text-xs rounded-lg text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
                 />
               </div>
             </div>
@@ -193,7 +190,7 @@ export function ContactSection() {
                 required
                 rows={4}
                 placeholder="Share your opportunity or project details..."
-                className="bg-card border-border resize-none text-xs rounded-lg focus-visible:ring-primary"
+                className="bg-[#0C0F0D] border-border resize-none text-xs rounded-lg text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
               />
             </div>
 

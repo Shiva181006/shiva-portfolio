@@ -6,13 +6,13 @@ export function Footer() {
           © {new Date().getFullYear()} Shiva Kasaudhan • Professional Portfolio
         </div>
         <div className="flex gap-6">
-          <a href="https://github.com/Shiva181006" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+          <a href="https://github.com/Shiva181006" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/shiva-kasaudhan-153858241/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+          <a href="https://www.linkedin.com/in/shiva-kasaudhan-153858241/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
             LinkedIn
           </a>
-          <a href="mailto:shivakasaudhan817@gmail.com" className="hover:text-primary transition-colors">
+          <a href="mailto:shivakasaudhan817@gmail.com" className="hover:text-accent transition-colors">
             Email
           </a>
         </div>

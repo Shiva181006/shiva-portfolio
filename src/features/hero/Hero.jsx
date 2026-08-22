@@ -60,7 +60,7 @@ function ProfileAvatar() {
 
   return (
     <div className="relative group shrink-0">
-      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-primary/30 bg-card shadow-subtle grid place-items-center">
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-border bg-card shadow-subtle grid place-items-center">
         {!hasError ? (
           <img
             src={imgSrc}
@@ -82,12 +82,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden bg-background bg-stone-grid bg-emerald-glow-top"
+      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden bg-background"
     >
-      {/* Soft ambient background wash */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[320px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-[300px] h-[200px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
@@ -102,11 +98,11 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs text-muted-foreground shadow-subtle"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-75 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
               <span className="font-medium text-foreground flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-primary" /> Gurgaon, Haryana, India
+                <MapPin className="w-3.5 h-3.5 text-accent" /> Gurgaon, Haryana, India
               </span>
               <span className="text-muted-foreground/60">•</span>
               <span>Available for Software & Frontend Roles</span>
@@ -120,7 +116,7 @@ export function Hero() {
               className="space-y-3"
             >
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-foreground">
-                Hi, I'm <span className="text-primary font-serif italic font-bold">Shiva Kasaudhan</span>
+                Hi, I'm <span className="text-accent font-serif italic font-bold">Shiva Kasaudhan</span>
               </h1>
               <p className="text-lg sm:text-2xl font-medium text-foreground/90">
                 Frontend Developer | React.js ➜ <Typewriter />
@@ -166,7 +162,7 @@ export function Hero() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5"
                 >
-                  <Download className="w-4 h-4 text-primary" /> Download Resume
+                  <Download className="w-4 h-4 text-accent" /> Download Resume
                 </a>
               </Button>
             </motion.div>
@@ -192,7 +188,7 @@ export function Hero() {
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all shadow-subtle"
+                    className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card text-muted-foreground hover:text-accent hover:border-accent/40 transition-all shadow-subtle"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -220,15 +216,15 @@ export function Hero() {
                     <p className="text-xs text-muted-foreground font-mono">MCA Graduate • PSIT Kanpur • 8.46 CGPA</p>
                   </div>
                 </div>
-                <span className="p-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary">
+                <span className="p-1.5 rounded-lg bg-emerald-950/40 border border-emerald-800/40 text-accent">
                   <UserCheck className="w-4 h-4" />
                 </span>
               </div>
 
               {/* Craftsmanship Highlights */}
               <div className="space-y-3 text-xs">
-                <div className="p-3 rounded-lg bg-background border border-border space-y-1">
-                  <div className="flex items-center justify-between font-mono text-[11px] text-primary font-bold">
+                <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
+                  <div className="flex items-center justify-between font-mono text-[11px] text-accent font-bold">
                     <span className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5" /> Core Tech</span>
                     <span>React + JS + Java</span>
                   </div>
@@ -237,8 +233,8 @@ export function Hero() {
                   </p>
                 </div>
 
-                <div className="p-3 rounded-lg bg-background border border-border space-y-1">
-                  <div className="flex items-center justify-between font-mono text-[11px] text-primary font-bold">
+                <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
+                  <div className="flex items-center justify-between font-mono text-[11px] text-accent font-bold">
                     <span className="flex items-center gap-1.5"><Terminal className="w-3.5 h-3.5" /> Flagship Build</span>
                     <span>HireLens AI</span>
                   </div>
@@ -249,7 +245,7 @@ export function Hero() {
               </div>
 
               {/* Personal Motto Quote */}
-              <div className="p-3.5 rounded-lg bg-primary/5 border border-primary/20 text-xs">
+              <div className="p-3.5 rounded-lg bg-[#0C0F0D] border border-border text-xs">
                 <p className="text-foreground/90 font-serif italic leading-relaxed text-sm">
                   "Passionate about creating efficient, responsive web applications with clean code and intuitive user experiences."
                 </p>
@@ -257,20 +253,20 @@ export function Hero() {
 
               {/* Quick stats pills */}
               <div className="grid grid-cols-4 gap-1.5 text-center pt-1 font-mono">
-                <div className="p-2 rounded-lg bg-background border border-border">
-                  <div className="text-sm font-bold text-primary">8.46</div>
+                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
+                  <div className="text-sm font-bold text-accent">8.46</div>
                   <div className="text-[8px] text-muted-foreground uppercase">MCA CGPA</div>
                 </div>
-                <div className="p-2 rounded-lg bg-background border border-border">
-                  <div className="text-sm font-bold text-primary">100+</div>
+                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
+                  <div className="text-sm font-bold text-accent">100+</div>
                   <div className="text-[8px] text-muted-foreground uppercase">DSA Solved</div>
                 </div>
-                <div className="p-2 rounded-lg bg-background border border-border">
-                  <div className="text-sm font-bold text-primary">100%</div>
+                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
+                  <div className="text-sm font-bold text-accent">100%</div>
                   <div className="text-[8px] text-muted-foreground uppercase">Attendance</div>
                 </div>
-                <div className="p-2 rounded-lg bg-background border border-border">
-                  <div className="text-sm font-bold text-primary">3+</div>
+                <div className="p-2 rounded-lg bg-[#0C0F0D] border border-border">
+                  <div className="text-sm font-bold text-accent">3+</div>
                   <div className="text-[8px] text-muted-foreground uppercase">Featured Projects</div>
                 </div>
               </div>

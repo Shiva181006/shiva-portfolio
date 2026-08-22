@@ -229,11 +229,11 @@ export function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
             <FolderGit2 className="w-3.5 h-3.5" /> Selected Portfolio Projects
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            Crafted with <span className="text-primary whitespace-nowrap">purpose & precision</span>
+            Crafted with <span className="text-accent whitespace-nowrap">purpose & precision</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             Real applications built to solve genuine technical and user challenges.
@@ -268,7 +268,7 @@ export function ProjectsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="craft-card p-6 sm:p-8"
+                className="craft-card p-6 sm:p-8 bg-card border border-border"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   
@@ -277,15 +277,15 @@ export function ProjectsSection() {
                     {p.isFeatured ? (
                       <HireLensInteractiveWidget />
                     ) : (
-                      <div className="rounded-xl border border-border bg-background p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
+                      <div className="rounded-xl border border-border bg-[#0C0F0D] p-6 flex flex-col justify-between aspect-[4/3] relative overflow-hidden">
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-mono text-muted-foreground">{p.tag}</span>
-                          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-950/40 text-accent border border-emerald-800/40">
                             {p.status}
                           </span>
                         </div>
                         <div className="my-auto text-center">
-                          <div className="text-5xl font-mono font-extrabold text-primary/20 mb-2">0{i + 1}</div>
+                          <div className="text-5xl font-mono font-extrabold text-muted-foreground/30 mb-2">0{i + 1}</div>
                           <h4 className="text-xl font-bold text-foreground">{p.title}</h4>
                         </div>
                         <div className="text-[11px] font-mono text-muted-foreground">
@@ -299,7 +299,7 @@ export function ProjectsSection() {
                   <div className="lg:col-span-7 space-y-5">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <span className="text-xs font-mono text-primary font-semibold">{p.tag}</span>
+                        <span className="text-xs font-mono text-accent font-semibold">{p.tag}</span>
                         <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-1 tracking-tight">
                           {p.title}
                         </h3>
@@ -311,7 +311,7 @@ export function ProjectsSection() {
                           rel="noopener noreferrer"
                           aria-label="View Source Code on GitHub"
                           title="View Source Code on GitHub"
-                          className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                          className="w-9 h-9 grid place-items-center rounded-lg border border-border bg-card hover:bg-muted text-muted-foreground hover:text-accent transition-colors"
                         >
                           <Github className="w-4 h-4" />
                         </a>
@@ -332,16 +332,16 @@ export function ProjectsSection() {
 
                     {/* Problem / Solution / Impact Triad */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-sans">
-                      <div className="p-3 rounded-lg bg-background border border-border space-y-1">
-                        <div className="font-mono text-[10px] uppercase font-bold text-primary">Problem</div>
+                      <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-accent">Problem</div>
                         <p className="text-muted-foreground leading-relaxed text-[11px]">{p.problem}</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-background border border-border space-y-1">
-                        <div className="font-mono text-[10px] uppercase font-bold text-primary">Solution</div>
+                      <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-accent">Solution</div>
                         <p className="text-muted-foreground leading-relaxed text-[11px]">{p.solution}</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-background border border-border space-y-1">
-                        <div className="font-mono text-[10px] uppercase font-bold text-primary">Impact</div>
+                      <div className="p-3 rounded-lg bg-[#0C0F0D] border border-border space-y-1">
+                        <div className="font-mono text-[10px] uppercase font-bold text-accent">Impact</div>
                         <p className="text-muted-foreground leading-relaxed text-[11px]">{p.impact}</p>
                       </div>
                     </div>
@@ -351,9 +351,9 @@ export function ProjectsSection() {
                       {p.tech.map((t) => (
                         <span
                           key={t}
-                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-border bg-background text-muted-foreground"
+                          className="inline-flex items-center gap-1 text-[11px] font-mono px-3 py-1 rounded-full border border-border bg-[#0C0F0D] text-muted-foreground"
                         >
-                          <Sparkle className="w-2.5 h-2.5 text-primary" /> {t}
+                          <Sparkle className="w-2.5 h-2.5 text-accent" /> {t}
                         </span>
                       ))}
                     </div>

@@ -60,7 +60,7 @@ export function Navbar() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 border-b border-border shadow-subtle py-3"
+          ? "bg-[#0C0F0D]/95 border-b border-border shadow-subtle py-3"
           : "bg-transparent py-4"
       }`}
     >
@@ -75,8 +75,8 @@ export function Navbar() {
           <span className="w-8 h-8 rounded-lg bg-primary grid place-items-center text-white font-mono text-xs font-bold transition-transform group-hover:scale-105">
             SK
           </span>
-          <span className="text-foreground group-hover:text-primary transition-colors">
-            Shiva <span className="text-primary font-serif italic text-sm font-semibold">Kasaudhan</span>
+          <span className="text-foreground group-hover:text-accent transition-colors">
+            Shiva <span className="text-accent font-serif italic text-sm font-semibold">Kasaudhan</span>
           </span>
         </a>
 
@@ -90,7 +90,7 @@ export function Navbar() {
                 <a
                   href={l.href}
                   onClick={(e) => handleNavClick(e, l.href)}
-                  className={`relative px-3 py-1.5 text-xs font-medium transition-colors rounded-full ${
+                  className={`relative px-3.5 py-1.5 text-xs font-medium transition-colors rounded-full ${
                     isActive
                       ? "text-white font-semibold"
                       : "text-muted-foreground hover:text-foreground"
@@ -119,7 +119,7 @@ export function Navbar() {
             aria-label="Toggle theme"
             className="rounded-full hover:bg-muted text-foreground w-9 h-9"
           >
-            {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-stone-700" />}
+            {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-stone-300" />}
           </Button>
 
           <Button
@@ -153,7 +153,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden border-b border-border bg-background px-4 py-4 shadow-md"
+            className="md:hidden overflow-hidden border-b border-border bg-[#0C0F0D] px-4 py-4 shadow-md"
           >
             <ul className="flex flex-col gap-1 text-sm">
               {links.map((l) => (
@@ -163,7 +163,7 @@ export function Navbar() {
                     onClick={(e) => handleNavClick(e, l.href)}
                     className={`block px-4 py-2.5 rounded-lg font-medium transition-colors ${
                       active === l.href.slice(1)
-                        ? "bg-primary/10 text-primary font-bold border border-primary/20"
+                        ? "bg-primary text-white font-bold"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >

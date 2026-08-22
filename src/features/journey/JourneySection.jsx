@@ -48,10 +48,7 @@ const timeline = [
 
 export function JourneySection() {
   return (
-    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background bg-stone-grid bg-emerald-glow-top overflow-hidden">
-      {/* Soft ambient background wash */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
+    <section id="journey" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
@@ -62,11 +59,11 @@ export function JourneySection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-14"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent uppercase tracking-widest mb-3">
             <GitBranch className="w-3.5 h-3.5" /> Growth & Milestones
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
-            My developer <span className="text-primary">timeline</span>
+            My developer <span className="text-accent">timeline</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
             The path of continuous learning, certifications, and project engineering.
@@ -82,6 +79,7 @@ export function JourneySection() {
             {timeline.map((item, i) => {
               const Icon = item.icon;
               const isEven = i % 2 === 0;
+              const isLatest = i === timeline.length - 1;
               return (
                 <motion.div
                   key={item.title}
@@ -95,15 +93,17 @@ export function JourneySection() {
                 >
                   {/* Timeline Dot Badge */}
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 top-0 md:top-auto">
-                    <div className="w-8 h-8 rounded-full bg-primary grid place-items-center shadow-subtle ring-4 ring-background text-white">
+                    <div className={`w-8 h-8 rounded-full grid place-items-center shadow-subtle ring-4 ring-[#0C0F0D] ${
+                      isLatest ? "bg-accent text-[#0C0F0D] font-bold" : "bg-primary text-white"
+                    }`}>
                       <Icon className="w-3.5 h-3.5" />
                     </div>
                   </div>
 
                   {/* Card Container */}
                   <div className="pl-12 md:pl-0 md:w-1/2 md:px-8 w-full">
-                    <div className="craft-card p-5 space-y-1.5">
-                      <div className="text-[11px] font-mono font-bold text-primary">{item.year}</div>
+                    <div className="craft-card p-5 space-y-1.5 bg-card border border-border">
+                      <div className="text-[11px] font-mono font-bold text-accent">{item.year}</div>
                       <h3 className="font-bold text-base text-foreground">{item.title}</h3>
                       <div className="text-xs text-muted-foreground font-mono">{item.place}</div>
                       <p className="mt-2 text-xs text-muted-foreground leading-relaxed font-sans">

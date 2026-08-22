@@ -5,67 +5,67 @@
 :root {
   --radius: 0.625rem; /* 10px rounded corners */
   
-  /* Emerald + Stone Light Palette */
-  --background: #FAFAF9;       /* Stone 50 */
-  --foreground: #292524;       /* Stone 800 */
-  --card: #FFFFFF;             /* Pure White Surface */
-  --card-foreground: #292524;
+  /* Black + Emerald Design System */
+  --background: #0C0F0D;       /* Deep Obsidian Black */
+  --foreground: #F5F5F4;       /* Stone 100 Main Text */
+  --card: #151A16;             /* Dark Surface Card */
+  --card-foreground: #F5F5F4;
 
-  --primary: #166534;          /* Emerald 800 */
-  --primary-dark: #14532D;     /* Emerald 900 */
+  --primary: #15803D;          /* Primary Emerald */
+  --primary-dark: #166534;     /* Primary Emerald Hover */
   --primary-foreground: #FFFFFF;
 
-  --secondary: #F5F5F4;        /* Stone 100 */
-  --secondary-foreground: #292524;
+  --secondary: #151A16;
+  --secondary-foreground: #F5F5F4;
 
-  --muted: #F5F5F4;
-  --muted-foreground: #78716C;  /* Stone 500 */
+  --muted: #151A16;
+  --muted-foreground: #A8A29E;  /* Stone 400 Muted Text */
 
-  --accent: #84CC16;         /* Lime 500 */
-  --accent-foreground: #1A2E05;
+  --accent: #4ADE80;           /* Emerald 400 Accent Highlight */
+  --accent-foreground: #0C0F0D;
 
-  --border: #E7E5E4;           /* Stone 200 */
-  --input: #E7E5E4;
-  --ring: #166534;
+  --border: #28332A;           /* Subtle Dark Border */
+  --input: #28332A;
+  --ring: #15803D;
 
-  --success: #16A34A;
-  --warning: #CA8A04;
-  --destructive: #DC2626;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --destructive: #EF4444;
 
-  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.5);
 }
 
 .dark {
-  /* Emerald + Stone Dark Palette */
-  --background: #1C1917;       /* Stone 900 */
-  --foreground: #F5F5F4;       /* Stone 100 */
-  --card: #262626;             /* Stone 800 */
+  /* Inherits exact Black + Emerald tokens for consistency */
+  --background: #0C0F0D;
+  --foreground: #F5F5F4;
+  --card: #151A16;
   --card-foreground: #F5F5F4;
 
-  --primary: #15803D;          /* Emerald 700 */
-  --primary-dark: #166534;     /* Emerald 800 */
+  --primary: #15803D;
+  --primary-dark: #166534;
   --primary-foreground: #FFFFFF;
 
-  --secondary: #292524;
+  --secondary: #151A16;
   --secondary-foreground: #F5F5F4;
 
-  --muted: #292524;
+  --muted: #151A16;
   --muted-foreground: #A8A29E;
 
-  --accent: #84CC16;
-  --accent-foreground: #1A2E05;
+  --accent: #4ADE80;
+  --accent-foreground: #0C0F0D;
 
-  --border: #44403C;           /* Stone 700 */
-  --input: #44403C;
+  --border: #28332A;
+  --input: #28332A;
   --ring: #15803D;
 
-  --success: #16A34A;
-  --warning: #CA8A04;
-  --destructive: #DC2626;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --destructive: #EF4444;
 
-  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.5);
 }
 
 @layer base {
@@ -91,12 +91,13 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     letter-spacing: -0.02em;
+    color: var(--foreground);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    color: var(--primary);
+    color: #4ADE80;
   }
   .bg-gradient-primary {
     background-color: var(--primary);
@@ -107,45 +108,11 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-subtle);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .craft-card:hover {
-    border-color: #D6D3D1;
+    border-color: #3B4B3E;
     box-shadow: var(--shadow-card);
-  }
-
-  /* Architectural Stone Background Patterns */
-  .bg-stone-grid {
-    background-image: 
-      linear-gradient(to right, rgba(231, 229, 228, 0.5) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(231, 229, 228, 0.5) 1px, transparent 1px);
-    background-size: 36px 36px;
-  }
-  .dark .bg-stone-grid {
-    background-image: 
-      linear-gradient(to right, rgba(68, 64, 60, 0.35) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(68, 64, 60, 0.35) 1px, transparent 1px);
-    background-size: 36px 36px;
-  }
-
-  .bg-stone-dots {
-    background-image: radial-gradient(rgba(120, 113, 108, 0.18) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-  .dark .bg-stone-dots {
-    background-image: radial-gradient(rgba(168, 162, 158, 0.15) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  .bg-emerald-glow-top {
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(22, 101, 52, 0.06), transparent 75%);
-  }
-  .dark .bg-emerald-glow-top {
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(21, 128, 61, 0.10), transparent 75%);
-  }
-
-  .bg-emerald-glow-bottom {
-    background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(22, 101, 52, 0.05), transparent 75%);
   }
 }
 
@@ -158,10 +125,10 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #0C0F0D;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6D3D1;
+  background: #28332A;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
