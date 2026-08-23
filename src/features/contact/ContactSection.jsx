@@ -44,28 +44,26 @@ export function ContactSection() {
       if (res.ok && (data.success === "true" || data.success === true)) {
         toast.success("Message sent directly to Shiva's inbox!", {
           description: "Thank you for reaching out! Shiva will reply to your email soon.",
-          icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
+          icon: <CheckCircle2 className="w-4 h-4 text-[#E8B84B]" />,
         });
         form.reset();
       } else {
         toast.error("Message could not be sent. Please try again.", {
           description: "Alternatively, feel free to email me directly at shivakasaudhan817@gmail.com.",
         });
-        // Retain user input on failure - do not reset form
       }
     } catch (err) {
       console.error("Submission Error:", err);
       toast.error("Message could not be sent due to network error.", {
         description: "Please check your internet connection and try again or email shivakasaudhan817@gmail.com.",
       });
-      // Retain user input on failure - do not reset form
     } finally {
       setSending(false);
     }
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F2EDE3] overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0E2A2B] overflow-hidden border-t border-[#1C4E50]">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
@@ -76,13 +74,13 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#E8B84B] font-bold uppercase tracking-widest mb-3">
             <Mail className="w-3.5 h-3.5" /> 06 — Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
-            Let's <span className="text-[#A3432F] whitespace-nowrap">connect & collaborate</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F4EFE6]">
+            Let's <span className="text-[#E8B84B] font-serif italic font-normal">connect & collaborate</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#716B61] leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] leading-relaxed font-sans">
             Interested in hiring me for frontend development or software developer roles? Drop a message below.
           </p>
         </motion.div>
@@ -111,14 +109,14 @@ export function ContactSection() {
               <a
                 key={item.label}
                 href={item.href}
-                className="craft-card p-4.5 flex items-center gap-4 group bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
+                className="editorial-card p-4.5 flex items-center gap-4 group bg-[#133637] border border-[#1C4E50] rounded-md"
               >
-                <div className="w-10 h-10 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] grid place-items-center text-[#A3432F] shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-md bg-[#0E2A2B] border border-[#1C4E50] grid place-items-center text-[#E8B84B] shrink-0 group-hover:scale-105 transition-transform">
                   <item.icon className="w-4.5 h-4.5" />
                 </div>
                 <div className="overflow-hidden">
-                  <div className="text-[10px] text-[#716B61] font-mono uppercase">{item.label}</div>
-                  <div className="font-bold text-xs sm:text-sm mt-0.5 text-[#181715] truncate">{item.value}</div>
+                  <div className="text-[10px] text-[#A1B5B3] font-mono uppercase">{item.label}</div>
+                  <div className="font-bold text-xs sm:text-sm mt-0.5 text-[#F4EFE6] truncate font-sans">{item.value}</div>
                 </div>
               </a>
             ))}
@@ -129,7 +127,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex-1 h-11 grid place-items-center rounded-md border border-[#D5CCBC] bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#716B61] hover:text-[#A3432F] transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-md border border-[#1C4E50] bg-[#133637] hover:bg-[#184143] text-[#A1B5B3] hover:text-[#E8B84B] transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Github className="w-4 h-4" /> GitHub</span>
               </a>
@@ -138,7 +136,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex-1 h-11 grid place-items-center rounded-md border border-[#D5CCBC] bg-[#F8F4EC] hover:bg-[#EBE4D8] text-[#716B61] hover:text-[#A3432F] transition-colors font-mono text-xs font-semibold"
+                className="flex-1 h-11 grid place-items-center rounded-md border border-[#1C4E50] bg-[#133637] hover:bg-[#184143] text-[#A1B5B3] hover:text-[#E8B84B] transition-colors font-mono text-xs font-semibold"
               >
                 <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> LinkedIn</span>
               </a>
@@ -153,22 +151,22 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 craft-card p-6 sm:p-8 space-y-4 font-sans bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
+            className="lg:col-span-3 editorial-card p-6 sm:p-8 space-y-4 font-sans bg-[#133637] border border-[#1C4E50] rounded-md"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-[10px] font-mono text-[#716B61] uppercase tracking-wider mb-1.5 block font-bold">
+                <label className="text-[10px] font-mono text-[#A1B5B3] uppercase tracking-wider mb-1.5 block font-bold">
                   Your Name
                 </label>
                 <Input
                   name="name"
                   required
                   placeholder="e.g. Rahul Sharma"
-                  className="bg-[#F2EDE3] border-[#D5CCBC] h-11 text-xs rounded-md text-[#181715] placeholder:text-[#716B61] focus-visible:ring-[#A3432F]"
+                  className="bg-[#0E2A2B] border-[#1C4E50] h-11 text-xs rounded-md text-[#F4EFE6] placeholder:text-[#A1B5B3]/60 focus-visible:ring-[#E8B84B]"
                 />
               </div>
               <div>
-                <label className="text-[10px] font-mono text-[#716B61] uppercase tracking-wider mb-1.5 block font-bold">
+                <label className="text-[10px] font-mono text-[#A1B5B3] uppercase tracking-wider mb-1.5 block font-bold">
                   Your Email
                 </label>
                 <Input
@@ -176,13 +174,13 @@ export function ContactSection() {
                   type="email"
                   required
                   placeholder="you@company.com"
-                  className="bg-[#F2EDE3] border-[#D5CCBC] h-11 text-xs rounded-md text-[#181715] placeholder:text-[#716B61] focus-visible:ring-[#A3432F]"
+                  className="bg-[#0E2A2B] border-[#1C4E50] h-11 text-xs rounded-md text-[#F4EFE6] placeholder:text-[#A1B5B3]/60 focus-visible:ring-[#E8B84B]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-[10px] font-mono text-[#716B61] uppercase tracking-wider mb-1.5 block font-bold">
+              <label className="text-[10px] font-mono text-[#A1B5B3] uppercase tracking-wider mb-1.5 block font-bold">
                 Your Message
               </label>
               <Textarea
@@ -190,7 +188,7 @@ export function ContactSection() {
                 required
                 rows={4}
                 placeholder="Share your opportunity or project details..."
-                className="bg-[#F2EDE3] border-[#D5CCBC] resize-none text-xs rounded-md text-[#181715] placeholder:text-[#716B61] focus-visible:ring-[#A3432F]"
+                className="bg-[#0E2A2B] border-[#1C4E50] resize-none text-xs rounded-md text-[#F4EFE6] placeholder:text-[#A1B5B3]/60 focus-visible:ring-[#E8B84B]"
               />
             </div>
 
@@ -198,7 +196,7 @@ export function ContactSection() {
               type="submit"
               disabled={sending}
               size="lg"
-              className="w-full bg-[#A3432F] hover:bg-[#863525] text-white rounded-md font-semibold text-xs py-3 border-0 transition-colors shadow-subtle"
+              className="w-full bg-[#E8B84B] hover:bg-[#D4A338] text-[#0E2A2B] rounded-md font-bold text-xs py-3 border-0 transition-colors shadow-subtle"
             >
               {sending ? "Sending..." : (
                 <span className="flex items-center justify-center gap-2">

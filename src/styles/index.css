@@ -3,69 +3,68 @@
 @tailwind utilities;
 
 :root {
-  --radius: 0.5rem; /* 8px rounded corners for editorial paper feel */
-  
-  /* Editorial Ink + Terracotta + Paper Palette */
-  --background: #F2EDE3;       /* Paper Background Canvas */
-  --foreground: #181715;       /* Deep Ink Text */
-  --card: #F8F4EC;             /* Light Paper Surface */
-  --card-foreground: #181715;
+  --radius: 0.375rem;
 
-  --primary: #A3432F;          /* Terracotta Primary */
-  --primary-dark: #863525;     /* Terracotta Hover */
-  --primary-foreground: #FFFFFF;
+  /* Custom Palette Requested by User */
+  --background: #0E2A2B;        /* Deep teal-black canvas */
+  --foreground: #F4EFE6;        /* Warm cream primary text */
+  --card: #133637;              /* Warm dark teal surface */
+  --card-foreground: #F4EFE6;   /* Warm cream text on surface */
 
-  --secondary: #F8F4EC;
-  --secondary-foreground: #181715;
+  --primary: #E8B84B;           /* Mustard gold dominant highlight */
+  --primary-dark: #D4A338;      /* Mustard gold hover */
+  --primary-foreground: #0E2A2B;/* Dark text on primary mustard gold */
 
-  --muted: #F8F4EC;
-  --muted-foreground: #716B61;  /* Muted Ink Text */
+  --secondary: #D96C4A;         /* Clay / burnt orange secondary accent */
+  --secondary-foreground: #F4EFE6;
 
-  --accent: #D6A756;           /* Brass Accent */
-  --accent-foreground: #181715;
+  --muted: #133637;
+  --muted-foreground: #A1B5B3;  /* Muted sage-cream text */
 
-  --border: #D5CCBC;           /* Editorial Paper Border Rule */
-  --input: #D5CCBC;
-  --ring: #A3432F;
+  --accent: #E8B84B;            /* Mustard gold accent */
+  --accent-foreground: #0E2A2B;
 
-  --success: #3F6B4A;
-  --warning: #A56A22;
-  --destructive: #A33A2B;
+  --border: #1C4E50;            /* Tactile dark teal rule line */
+  --input: #1C4E50;
+  --ring: #E8B84B;
 
-  --shadow-subtle: 0 1px 3px 0 rgba(24, 23, 21, 0.05);
-  --shadow-card: 0 4px 10px -2px rgba(24, 23, 21, 0.06);
+  --success: #4E8A63;
+  --warning: #E8B84B;
+  --destructive: #D96C4A;
+
+  --shadow-subtle: 0 2px 8px -2px rgba(10, 20, 20, 0.4);
+  --shadow-card: 0 8px 24px -4px rgba(6, 15, 16, 0.5);
 }
 
 .dark {
-  /* Editorial Palette maintains warm paper atmosphere */
-  --background: #F2EDE3;
-  --foreground: #181715;
-  --card: #F8F4EC;
-  --card-foreground: #181715;
+  --background: #0E2A2B;
+  --foreground: #F4EFE6;
+  --card: #133637;
+  --card-foreground: #F4EFE6;
 
-  --primary: #A3432F;
-  --primary-dark: #863525;
-  --primary-foreground: #FFFFFF;
+  --primary: #E8B84B;
+  --primary-dark: #D4A338;
+  --primary-foreground: #0E2A2B;
 
-  --secondary: #F8F4EC;
-  --secondary-foreground: #181715;
+  --secondary: #D96C4A;
+  --secondary-foreground: #F4EFE6;
 
-  --muted: #F8F4EC;
-  --muted-foreground: #716B61;
+  --muted: #133637;
+  --muted-foreground: #A1B5B3;
 
-  --accent: #D6A756;
-  --accent-foreground: #181715;
+  --accent: #E8B84B;
+  --accent-foreground: #0E2A2B;
 
-  --border: #D5CCBC;
-  --input: #D5CCBC;
-  --ring: #A3432F;
+  --border: #1C4E50;
+  --input: #1C4E50;
+  --ring: #E8B84B;
 
-  --success: #3F6B4A;
-  --warning: #A56A22;
-  --destructive: #A33A2B;
+  --success: #4E8A63;
+  --warning: #E8B84B;
+  --destructive: #D96C4A;
 
-  --shadow-subtle: 0 1px 3px 0 rgba(24, 23, 21, 0.05);
-  --shadow-card: 0 4px 10px -2px rgba(24, 23, 21, 0.06);
+  --shadow-subtle: 0 2px 8px -2px rgba(10, 20, 20, 0.4);
+  --shadow-card: 0 8px 24px -4px rgba(6, 15, 16, 0.5);
 }
 
 @layer base {
@@ -77,12 +76,14 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    background-color: #0E2A2B;
+    color: #F4EFE6;
   }
   
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     width: 100%;
@@ -93,49 +94,46 @@
     letter-spacing: -0.02em;
     color: var(--foreground);
   }
+
+  /* Editorial display headings */
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
 }
 
 @layer utilities {
-  .text-gradient {
-    color: #A3432F;
-  }
-  .bg-gradient-primary {
-    background-color: var(--primary);
-  }
-  
-  .craft-card {
+  .editorial-card {
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-subtle);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
   }
-  .craft-card:hover {
-    border-color: #B5AB9B;
-    box-shadow: var(--shadow-card);
+  .editorial-card:hover {
+    border-color: #2B696C;
+    background-color: #163E3F;
   }
 
-  /* Editorial Paper Rule Divider */
   .paper-rule {
-    border-bottom: 1px solid #D5CCBC;
+    border-bottom: 1px solid #1C4E50;
   }
 }
 
 ::selection {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: #E8B84B;
+  color: #0E2A2B;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F2EDE3;
+  background: #0E2A2B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D5CCBC;
+  background: #1C4E50;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: #E8B84B;
 }

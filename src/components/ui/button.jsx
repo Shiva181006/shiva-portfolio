@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils.js";
 
 const variants = {
-  default: "bg-primary text-white shadow-subtle hover:bg-primary-dark transition-colors",
+  default: "bg-primary text-primary-foreground font-semibold shadow-subtle hover:bg-primary-dark transition-colors",
   outline: "border border-border bg-card shadow-subtle hover:bg-muted text-foreground transition-colors",
   ghost: "hover:bg-muted text-foreground transition-colors",
   secondary: "bg-secondary text-secondary-foreground shadow-subtle hover:bg-muted transition-colors",

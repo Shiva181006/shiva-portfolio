@@ -60,7 +60,7 @@ const certs = [
 
 export function CertificationsSection() {
   return (
-    <section id="certifications" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-[#F2EDE3] overflow-hidden">
+    <section id="certifications" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-[#0E2A2B] overflow-hidden border-t border-[#1C4E50]">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -71,13 +71,13 @@ export function CertificationsSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#E8B84B] font-bold uppercase tracking-widest mb-3">
             <Award className="w-3.5 h-3.5" /> 04 — Verified Certifications
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
-            Credentials & <span className="text-[#A3432F]">continuous learning</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F4EFE6]">
+            Credentials & <span className="text-[#E8B84B] font-serif italic font-normal">continuous learning</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#716B61] leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] leading-relaxed font-sans">
             Industry & academic certifications verifying software, programming, and cloud skills.
           </p>
         </motion.div>
@@ -94,23 +94,23 @@ export function CertificationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="craft-card p-4.5 flex items-start justify-between gap-3 group bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
+              className="editorial-card p-4.5 flex items-start justify-between gap-3 group bg-[#133637] border border-[#1C4E50] rounded-md"
             >
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] grid place-items-center text-[#A3432F] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-md bg-[#0E2A2B] border border-[#1C4E50] grid place-items-center text-[#E8B84B] shrink-0 mt-0.5">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xs sm:text-sm text-[#181715] group-hover:text-[#A3432F] transition-colors leading-snug">
+                  <h3 className="font-bold text-xs sm:text-sm text-[#F4EFE6] group-hover:text-[#E8B84B] transition-colors leading-snug font-sans">
                     {c.title}
                   </h3>
-                  <div className="text-[10px] text-[#716B61] mt-1 font-mono">
-                    {c.issuer} • <span className="text-[#A3432F] font-semibold">{c.grade}</span>
+                  <div className="text-[10px] text-[#A1B5B3] mt-1 font-mono">
+                    {c.issuer} • <span className="text-[#E8B84B] font-semibold">{c.grade}</span>
                   </div>
                 </div>
               </div>
 
-              <ExternalLink className="w-3.5 h-3.5 text-[#716B61] group-hover:text-[#A3432F] transition-colors shrink-0 mt-1" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#A1B5B3] group-hover:text-[#E8B84B] transition-colors shrink-0 mt-1" />
             </motion.a>
           ))}
         </div>

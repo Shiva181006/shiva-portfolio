@@ -60,7 +60,7 @@ const groups = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F2EDE3] overflow-hidden">
+    <section id="skills" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0E2A2B] overflow-hidden border-t border-[#1C4E50]">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -71,13 +71,13 @@ export function SkillsSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#A3432F] font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#E8B84B] font-bold uppercase tracking-widest mb-3">
             <Code className="w-3.5 h-3.5" /> 03 — Technical Skills
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#181715]">
-            Tools I use to <span className="text-[#A3432F] whitespace-nowrap">build & ship</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F4EFE6]">
+            Tools I use to <span className="text-[#E8B84B] font-serif italic font-normal">build & ship</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#716B61] leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] leading-relaxed font-sans">
             Practical competencies tested and applied across real project deployments.
           </p>
         </motion.div>
@@ -91,28 +91,28 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="craft-card p-6 flex flex-col justify-between bg-[#F8F4EC] border border-[#D5CCBC] rounded-md"
+              className="editorial-card p-6 flex flex-col justify-between bg-[#133637] border border-[#1C4E50] rounded-md"
             >
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-md bg-[#F2EDE3] border border-[#D5CCBC] grid place-items-center text-[#A3432F] shrink-0">
+                  <div className="w-10 h-10 rounded-md bg-[#0E2A2B] border border-[#1C4E50] grid place-items-center text-[#E8B84B] shrink-0">
                     <g.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-bold text-base text-[#181715]">{g.title}</h3>
+                  <h3 className="font-bold text-base text-[#F4EFE6] font-sans">{g.title}</h3>
                 </div>
 
                 <ul className="space-y-4 font-sans">
                   {g.items.map((item) => (
                     <li key={item.name} className="text-xs space-y-0.5">
-                      <div className="flex items-center justify-between font-semibold text-[#181715]">
+                      <div className="flex items-center justify-between font-semibold text-[#F4EFE6]">
                         <span className="flex items-center gap-1.5">
-                          <Check className="w-3 h-3 text-[#A3432F]" /> {item.name}
+                          <Check className="w-3 h-3 text-[#E8B84B]" /> {item.name}
                         </span>
-                        <span className="text-[9px] font-mono px-2 py-0.2 rounded bg-[#F2EDE3] border border-[#D5CCBC] text-[#716B61]">
+                        <span className="text-[9px] font-mono px-2 py-0.2 rounded bg-[#0E2A2B] border border-[#1C4E50] text-[#A1B5B3]">
                           {item.level}
                         </span>
                       </div>
-                      <p className="text-[11px] text-[#716B61] pl-4 leading-relaxed font-sans">
+                      <p className="text-[11px] text-[#A1B5B3] pl-4 leading-relaxed font-sans">
                         {item.note}
                       </p>
                     </li>
