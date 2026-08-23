@@ -60,7 +60,7 @@ function ProfileAvatar() {
 
   return (
     <div className="relative group shrink-0">
-      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border border-[#1C4E50] bg-[#0E2A2B] shadow-subtle grid place-items-center">
+      <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-md overflow-hidden border border-[#1C4E50] bg-[#0E2A2B] shadow-subtle grid place-items-center">
         {!hasError ? (
           <img
             src={imgSrc}
@@ -69,7 +69,7 @@ function ProfileAvatar() {
             onError={handleErr}
           />
         ) : (
-          <div className="w-full h-full bg-[#E8B84B] grid place-items-center text-[#0E2A2B] font-bold text-xl">
+          <div className="w-full h-full bg-[#E8B84B] grid place-items-center text-[#0E2A2B] font-bold text-lg">
             SK
           </div>
         )}
@@ -82,20 +82,20 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[88vh] flex items-center pt-28 sm:pt-32 pb-16 overflow-hidden bg-[#0E2A2B]"
+      className="relative min-h-[85vh] flex items-center pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 overflow-hidden bg-[#0E2A2B]"
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Personal Narrative */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+          <div className="lg:col-span-7 space-y-6 text-left">
             
             {/* Live Status Pill */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#1C4E50] bg-[#133637] px-3.5 py-1.5 text-xs text-[#A1B5B3] shadow-subtle"
+              className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[#1C4E50] bg-[#133637] px-3.5 py-1.5 text-xs text-[#A1B5B3] shadow-subtle"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-[#E8B84B] opacity-75 animate-ping" />
@@ -104,7 +104,7 @@ export function Hero() {
               <span className="font-medium text-[#F4EFE6] flex items-center gap-1 font-mono">
                 <MapPin className="w-3.5 h-3.5 text-[#E8B84B]" /> Gurgaon, Haryana, India
               </span>
-              <span className="text-[#1C4E50]">•</span>
+              <span className="hidden sm:inline text-[#1C4E50]">•</span>
               <span className="font-mono text-[11px] text-[#A1B5B3]">Available for Software & Frontend Roles</span>
             </motion.div>
 
@@ -118,10 +118,10 @@ export function Hero() {
               <div className="text-xs font-mono text-[#E8B84B] font-bold tracking-widest uppercase">
                 PORTFOLIO & ENGINEERING NOTEBOOK
               </div>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#F4EFE6]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-[#F4EFE6]">
                 Hi, I'm <span className="text-[#E8B84B] font-serif italic font-normal">Shiva Kasaudhan</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-medium text-[#F4EFE6]/90 font-sans">
+              <p className="text-base sm:text-xl lg:text-2xl font-medium text-[#F4EFE6]/90 font-sans leading-snug">
                 Frontend Developer | React.js ➜ <Typewriter />
               </p>
             </motion.div>
@@ -131,7 +131,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm sm:text-base text-[#A1B5B3] max-w-xl leading-relaxed font-sans"
+              className="text-sm sm:text-base text-[#A1B5B3] w-full max-w-2xl leading-relaxed font-sans"
             >
               MCA graduate with an <strong className="text-[#F4EFE6] font-semibold">8.46/10 CGPA</strong> and hands-on experience building responsive React applications, full-stack projects, and AI-powered solutions using <strong className="text-[#F4EFE6] font-semibold">JavaScript, Java, React.js & Node.js</strong>.
             </motion.p>
@@ -175,7 +175,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex items-center gap-3 pt-3"
+              className="flex items-center gap-3 pt-2"
             >
               <span className="text-xs uppercase tracking-widest text-[#A1B5B3] font-mono font-bold">Connect</span>
               <div className="h-px w-8 bg-[#1C4E50]" />
@@ -208,15 +208,15 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none"
           >
-            <div className="relative rounded-md border border-[#1C4E50] bg-[#133637] p-6 shadow-card space-y-5">
+            <div className="relative rounded-md border border-[#1C4E50] bg-[#133637] p-5 sm:p-6 shadow-card space-y-4 sm:space-y-5">
               
               {/* Header Profile Badge */}
               <div className="flex items-center justify-between pb-4 border-b border-[#1C4E50]">
-                <div className="flex items-center gap-3.5">
+                <div className="flex items-center gap-3">
                   <ProfileAvatar />
                   <div>
-                    <h3 className="font-bold text-base text-[#F4EFE6] leading-tight font-sans">Shiva Kasaudhan</h3>
-                    <p className="text-xs text-[#A1B5B3] font-mono">MCA Graduate • PSIT Kanpur • 8.46 CGPA</p>
+                    <h3 className="font-bold text-sm sm:text-base text-[#F4EFE6] leading-tight font-sans">Shiva Kasaudhan</h3>
+                    <p className="text-[11px] sm:text-xs text-[#A1B5B3] font-mono">MCA Graduate • PSIT Kanpur</p>
                   </div>
                 </div>
                 <span className="p-1.5 rounded-md bg-[#0E2A2B] border border-[#1C4E50] text-[#E8B84B]">
@@ -225,7 +225,7 @@ export function Hero() {
               </div>
 
               {/* Craftsmanship Highlights */}
-              <div className="space-y-3 text-xs">
+              <div className="space-y-2.5 text-xs">
                 <div className="p-3 rounded-md bg-[#0E2A2B] border border-[#1C4E50] space-y-1">
                   <div className="flex items-center justify-between font-mono text-[11px] text-[#E8B84B] font-bold">
                     <span className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5" /> Core Tech</span>
@@ -249,28 +249,28 @@ export function Hero() {
 
               {/* Personal Motto Quote */}
               <div className="p-3.5 rounded-md bg-[#0E2A2B] border border-[#1C4E50] text-xs">
-                <p className="text-[#F4EFE6]/90 font-serif italic leading-relaxed text-sm">
+                <p className="text-[#F4EFE6]/90 font-serif italic leading-relaxed text-xs sm:text-sm">
                   "Passionate about creating efficient, responsive web applications with clean code and intuitive user experiences."
                 </p>
               </div>
 
               {/* Quick stats pills */}
-              <div className="grid grid-cols-4 gap-1.5 text-center pt-1 font-mono">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center pt-1 font-mono">
                 <div className="p-2 rounded-md bg-[#0E2A2B] border border-[#1C4E50]">
                   <div className="text-sm font-bold text-[#E8B84B]">8.46</div>
-                  <div className="text-[8px] text-[#A1B5B3] uppercase">MCA CGPA</div>
+                  <div className="text-[9px] text-[#A1B5B3] uppercase">MCA CGPA</div>
                 </div>
                 <div className="p-2 rounded-md bg-[#0E2A2B] border border-[#1C4E50]">
                   <div className="text-sm font-bold text-[#E8B84B]">100+</div>
-                  <div className="text-[8px] text-[#A1B5B3] uppercase">DSA Solved</div>
+                  <div className="text-[9px] text-[#A1B5B3] uppercase">DSA Solved</div>
                 </div>
                 <div className="p-2 rounded-md bg-[#0E2A2B] border border-[#1C4E50]">
                   <div className="text-sm font-bold text-[#E8B84B]">100%</div>
-                  <div className="text-[8px] text-[#A1B5B3] uppercase">Attendance</div>
+                  <div className="text-[9px] text-[#A1B5B3] uppercase">Attendance</div>
                 </div>
                 <div className="p-2 rounded-md bg-[#0E2A2B] border border-[#1C4E50]">
                   <div className="text-sm font-bold text-[#E8B84B]">3+</div>
-                  <div className="text-[8px] text-[#A1B5B3] uppercase">Featured Projects</div>
+                  <div className="text-[9px] text-[#A1B5B3] uppercase">Projects</div>
                 </div>
               </div>
 

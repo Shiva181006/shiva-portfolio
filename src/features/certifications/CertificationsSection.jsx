@@ -69,15 +69,15 @@ export function CertificationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mb-12"
+          className="max-w-4xl lg:max-w-5xl w-full mb-10"
         >
           <div className="inline-flex items-center gap-2 text-xs font-mono text-[#E8B84B] font-bold uppercase tracking-widest mb-3">
             <Award className="w-3.5 h-3.5" /> 04 — Verified Certifications
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F4EFE6]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-[#F4EFE6]">
             Credentials & <span className="text-[#E8B84B] font-serif italic font-normal">continuous learning</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] leading-relaxed font-sans">
+          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] max-w-2xl leading-relaxed font-sans">
             Industry & academic certifications verifying software, programming, and cloud skills.
           </p>
         </motion.div>

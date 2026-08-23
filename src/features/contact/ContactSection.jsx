@@ -72,15 +72,15 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center max-w-4xl mx-auto w-full mb-12"
         >
           <div className="inline-flex items-center gap-2 text-xs font-mono text-[#E8B84B] font-bold uppercase tracking-widest mb-3">
             <Mail className="w-3.5 h-3.5" /> 06 — Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F4EFE6]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-[#F4EFE6]">
             Let's <span className="text-[#E8B84B] font-serif italic font-normal">connect & collaborate</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] leading-relaxed font-sans">
+          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] max-w-xl mx-auto leading-relaxed font-sans">
             Interested in hiring me for frontend development or software developer roles? Drop a message below.
           </p>
         </motion.div>

@@ -224,15 +224,15 @@ export function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mb-12"
+          className="max-w-4xl lg:max-w-5xl w-full mb-10"
         >
           <div className="inline-flex items-center gap-2 text-xs font-mono text-[#E8B84B] font-bold uppercase tracking-widest mb-3">
             <FolderGit2 className="w-3.5 h-3.5" /> 02 — Selected Work
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#F4EFE6]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-[#F4EFE6]">
             Crafted with <span className="text-[#E8B84B] font-serif italic font-normal">purpose & precision</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] leading-relaxed font-sans">
+          <p className="mt-3 text-sm sm:text-base text-[#A1B5B3] max-w-2xl leading-relaxed font-sans">
             Real applications built to solve genuine technical and user challenges.
           </p>
         </motion.div>
