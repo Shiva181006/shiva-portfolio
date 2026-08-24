@@ -39,7 +39,7 @@ const achievements = [
     tag: "Graduation Honor",
   },
   {
-    title: "100+ DSA Problems Solved",
+    title: "150+ DSA Problems Solved",
     desc: "Solved 100+ Data Structures and Algorithms problems on platforms such as LeetCode, focusing on arrays, strings, dynamic programming & recursion.",
     tag: "Problem Solving",
   },
